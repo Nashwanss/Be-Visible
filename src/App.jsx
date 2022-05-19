@@ -3,17 +3,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 import "../src/Styles/App.css";
-import Layout from "./Layout/Layout";
+import Layout from "./Pages/Layout/Layout";
 
 
 
 
-export default function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" index element={<Layout whatIs="Dashboard" />} />
+        <Route path="/" index element={<Layout whatIs="Dashboard" iAm="learner"/>} />
       </Routes>
     </Router>
   );
 }
+
+export default App;
