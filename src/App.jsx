@@ -10,7 +10,7 @@ export default function App() {
   return (
     <Router>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" index element={<Dashboard />} />
         </Routes>
     </Router>
   );
