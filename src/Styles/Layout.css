@@ -43,6 +43,5 @@
   display: flex;
   justify-content: center;
   height: 88%;
-  min-width: 925px;
   overflow-x: hidden;
 }
