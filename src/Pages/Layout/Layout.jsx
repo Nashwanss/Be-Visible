@@ -74,12 +74,21 @@ const Layout = ({ iAm }) => {
           </div>
         </nav>
       </header>
-      <main className="content" style={contentWidth}>
-        <div className="inner-con dashboard">
-          <Dashboard />
+      <div className="content" style={contentWidth}>
+        <div className="wrapper">
+          <main>
+            <div className="inner-con dashboard">
+              <Dashboard />
+            </div>
+          </main>
+          <footer>
+            <div className="inner-con footer">
+              <button>Hola</button>
+            </div>
+          </footer>
         </div>
         {OpenWindow && <Window OpenWindow={OpenWindow} CloseWindow={CloseWindow} params={params} />}
-      </main>
+      </div>
 
     </div>
   )

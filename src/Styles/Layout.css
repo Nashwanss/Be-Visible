@@ -42,6 +42,43 @@
 .content {
   display: flex;
   justify-content: center;
-  height: 88%;
+  height: 88vh;
   overflow-x: hidden;
+  background-color: blue;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 400px;
+  background-color: red;
+}
+main {
+  display: flex;
+  height: 85%;
+  width: 100%;
+  justify-content: center;
+}
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 100%;
+  background-color: aqua;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #3c8891;
 }
