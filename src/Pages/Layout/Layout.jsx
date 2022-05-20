@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "../../Styles/Layout.css";
 import Logo from "../../Assets/LM-Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWrench } from "@fortawesome/free-solid-svg-icons";
+import { faWrench, faSliders } from "@fortawesome/free-solid-svg-icons";
 
 
 // Components
@@ -83,7 +83,7 @@ const Layout = ({ iAm }) => {
           </main>
           <footer>
             <div className="inner-con footer">
-              <button>Hola</button>
+              <button className="btn"><FontAwesomeIcon icon={faSliders} className="mg-r-5"/> Filter</button>
             </div>
           </footer>
         </div>
