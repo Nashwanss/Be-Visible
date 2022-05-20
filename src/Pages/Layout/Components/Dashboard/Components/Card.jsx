@@ -10,7 +10,8 @@ const Card = () => {
                     <h6>Nashwan Kurdali</h6>
                     <h6>Front-End developer</h6>
                 </div>
-            </div>      
+            </div>  
+
         </>
     );
 }
