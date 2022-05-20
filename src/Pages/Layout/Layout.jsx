@@ -4,50 +4,16 @@ import { useEffect, useState } from "react";
 // CSS & Assets
 import "../../Styles/Layout.css";
 import Logo from "../../Assets/LM-Logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWrench, faSliders } from "@fortawesome/free-solid-svg-icons";
 
 
 // Components
 import Window from "./Components/Window/Window";
+import {TopRightButton, FilterButton} from "./Components/Buttons/Buttons";
+
 import Dashboard from "./Components/Dashboard";
 
 
-const TopRightButton = ({ setOpenWindow, OpenWindow, setCloseWindow, setParams, iAm, setContentWidth }) => {
 
-  const displayWhat = () => {
-    if (iAm === "learner") {
-      return <div className="profile-button" onClick={() => handleClick()}></div>
-    } else if (iAm === "coach") {
-      return <FontAwesomeIcon icon={faWrench} onClick={() => handleClick()} />
-    }
-  }
-
-  const handleClick = () => {
-
-    if (OpenWindow) {
-      let seconds = 0
-      setCloseWindow(true)
-
-      const newInterval = setInterval(() => {
-        seconds++
-        if (seconds === 1) {
-          setContentWidth({ width: "100%" })
-          setOpenWindow(false)
-          setCloseWindow(false)
-          clearInterval(newInterval)
-        }
-      }, [1000])
-    } else {
-      setContentWidth({ width: "925px" })
-      setOpenWindow(true);
-      setParams(prevParams => ({ ...prevParams, type: "menu" }));
-    }
-  }
-  return (
-    displayWhat()
-  )
-}
 
 
 const Layout = ({ iAm }) => {
@@ -57,7 +23,7 @@ const Layout = ({ iAm }) => {
   const [params, setParams] = useState({ type: "", iAm: iAm })
 
 
-  const [contentWidth, setContentWidth] = useState({ width: "100%" });
+  const [contentSize, setContentSize] = useState({ width: "100%" });
 
   useEffect(() => {
     console.log(params)
@@ -70,11 +36,11 @@ const Layout = ({ iAm }) => {
             <a href="/" className="logo-con">
               <img src={Logo} alt="Logo" />
             </a>
-            <TopRightButton setOpenWindow={setOpenWindow} OpenWindow={OpenWindow} setCloseWindow={setCloseWindow} setParams={setParams} iAm={iAm} setContentWidth={setContentWidth} />
+            <TopRightButton setOpenWindow={setOpenWindow} OpenWindow={OpenWindow} setCloseWindow={setCloseWindow} setParams={setParams} iAm={iAm} setContentSize={setContentSize} contentSize={contentSize} />
           </div>
         </nav>
       </header>
-      <div className="content" style={contentWidth}>
+      <div className="content" style={contentSize}>
         <div className="wrapper">
           <main>
             <div className="inner-con dashboard">
@@ -83,7 +49,7 @@ const Layout = ({ iAm }) => {
           </main>
           <footer>
             <div className="inner-con footer">
-              <button className="btn"><FontAwesomeIcon icon={faSliders} className="mg-r-5"/> Filter</button>
+              <FilterButton setOpenWindow={setOpenWindow} OpenWindow={OpenWindow} setCloseWindow={setCloseWindow} setParams={setParams} iAm={iAm} setContentSize={setContentSize} />
             </div>
           </footer>
         </div>
