@@ -10,7 +10,7 @@ import { faWrench } from "@fortawesome/free-solid-svg-icons";
 
 // Components
 import Window from "./Components/Window/Window";
-import Dashboard from "./Components/Dashboard";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 
 const TopRightButton = ({ setOpenWindow, OpenWindow, setCloseWindow, setParams, iAm, setContentWidth }) => {
