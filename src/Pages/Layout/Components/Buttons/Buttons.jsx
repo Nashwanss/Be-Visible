@@ -3,29 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWrench, faSliders } from "@fortawesome/free-solid-svg-icons";
 
 
-const handleWindow = (OpenWindow, setOpenWindow, setCloseWindow, setContentSize, openValue, closeValue) => {
-    if (OpenWindow) {
-        let seconds = 0
-        setCloseWindow(true)
-        const newInterval = setInterval(() => {
-            seconds++
-            if (seconds === 1) {
-                setContentSize(closeValue)
-                setOpenWindow(false)
-                setCloseWindow(false)
-                clearInterval(newInterval)
-            }
-        }, [1000])
-    } else {
-        setContentSize(openValue)
-        setOpenWindow(true);
-    }
-}
+// this is a function not a component
 
 
-const TopRightButton = ({ setOpenWindow, OpenWindow, setCloseWindow, setParams, iAm, setContentSize, contentSize }) => {
+// components
 
-    const displayWhat = () => {
+const TopRightButton = ({ setParams, iAm, contentSize, handleWindow, windowIsOpen, WindowDisplayed }) => {
+
+    const displayWhat = () => { // To know what to display as button
         if (iAm === "learner") {
             return <div className="profile-button" onClick={() => handleClick()}></div>
         } else if (iAm === "coach") {
@@ -34,16 +19,28 @@ const TopRightButton = ({ setOpenWindow, OpenWindow, setCloseWindow, setParams, 
     }
 
     const handleClick = () => {
-
-        setParams(prevParams => ({ ...prevParams, type: "menu" }));
-        handleWindow(OpenWindow, setOpenWindow, setCloseWindow, setContentSize, {...contentSize, width: "925px"}, {...contentSize, width: "100%"})
+        console.log(WindowDisplayed + " " + windowIsOpen.filter)
+        if (!WindowDisplayed && windowIsOpen.filter === false) {
+            setParams(prevParams => ({ ...prevParams, type: "menu", marginLeft: "25px" }));
+            handleWindow({ ...contentSize, width: "925px", flexDirection: "row", justifyContent: "center", alignItems: "none" }, { ...contentSize, width: "450px", flexDirection: "row", justifyContent: "center", alignItems: "none" }, "menu")
+        } else if (WindowDisplayed && windowIsOpen.filter === false) {
+            setParams(prevParams => ({ ...prevParams, type: "menu", marginLeft: "25px" }));
+            handleWindow({ ...contentSize, width: "925px", flexDirection: "row", justifyContent: "center", alignItems: "none" }, { ...contentSize, width: "450px", flexDirection: "row", justifyContent: "center", alignItems: "none" }, "menu")
+        }
     }
+
     return (
         displayWhat()
     )
 }
 
-const FilterButton = ({ setOpenWindow, OpenWindow, setCloseWindow, setParams, iAm, setContentSize }) => {
-    return <button className="btn"><FontAwesomeIcon icon={faSliders} className="mg-r-5" /> Filter</button>
+const FilterButton = ({ setParams, contentSize, handleWindow }) => {
+    const handleClick = () => {
+        setParams(prevParams => ({ ...prevParams, type: "filter", marginLeft: "0" }));
+        handleWindow({ ...contentSize, height: "176vh", flexDirection: "column", justifyContent: "none", alignItems: "center" }, { ...contentSize, height: "88vh", flexDirection: "none", justifyContent: "center", alignItems: "none" }, "filter")
+
+    }
+    return <button className="btn" onClick={() => handleClick()}><FontAwesomeIcon icon={faSliders} className="mg-r-5" /> Filter</button>
 }
+
 export { FilterButton, TopRightButton }

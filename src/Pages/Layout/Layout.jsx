@@ -8,7 +8,7 @@ import Logo from "../../Assets/LM-Logo.png";
 
 // Components
 import Window from "./Components/Window/Window";
-import {TopRightButton, FilterButton} from "./Components/Buttons/Buttons";
+import { TopRightButton, FilterButton } from "./Components/Buttons/Buttons";
 
 import Dashboard from "./Components/Dashboard";
 
@@ -18,16 +18,50 @@ import Dashboard from "./Components/Dashboard";
 
 const Layout = ({ iAm }) => {
 
-  const [OpenWindow, setOpenWindow] = useState(false);
+
+
+  const [WindowDisplayed, setWindowDisplayed] = useState(false);
+  const [windowIsOpen, setWindowIsOpen] = useState({ menu: false, filter: false });
   const [CloseWindow, setCloseWindow] = useState(false);
-  const [params, setParams] = useState({ type: "", iAm: iAm })
+  const [params, setParams] = useState({ type: "", iAm: iAm, marginLeft: "0px" });
 
 
-  const [contentSize, setContentSize] = useState({ width: "100%" });
+  const [contentSize, setContentSize] = useState({ width: "100%", height: "100%", flexDirection: "row", justifyContent: "center", alignItems: "none" });
 
   useEffect(() => {
     console.log(params)
   }, [params])
+
+  const handleWindow = (openValue, closeValue, whatWindow) => {
+
+    const closeWindow = () => {
+      let seconds = 0
+      setCloseWindow(true)
+      const newInterval = setInterval(() => {
+        seconds++
+        if (seconds === 1) {
+          console.log(closeValue)
+          setContentSize(closeValue)
+          setWindowDisplayed(false)
+          setCloseWindow(false)
+          clearInterval(newInterval)
+          setWindowIsOpen({ ...windowIsOpen, [whatWindow]: false })
+        }
+      }, [1000])
+    }
+    if (WindowDisplayed) {
+      closeWindow()
+    } else {
+      setContentSize(openValue)
+      setWindowDisplayed(true);
+      setWindowIsOpen({ ...windowIsOpen, [whatWindow]: true })
+    }
+  }
+
+  useEffect(() => {
+    console.log(windowIsOpen)
+  }, [windowIsOpen])
+
   return (
     <div className="layout">
       <header>
@@ -36,7 +70,7 @@ const Layout = ({ iAm }) => {
             <a href="/" className="logo-con">
               <img src={Logo} alt="Logo" />
             </a>
-            <TopRightButton setOpenWindow={setOpenWindow} OpenWindow={OpenWindow} setCloseWindow={setCloseWindow} setParams={setParams} iAm={iAm} setContentSize={setContentSize} contentSize={contentSize} />
+            <TopRightButton setParams={setParams} iAm={iAm} contentSize={contentSize} handleWindow={handleWindow} windowIsOpen={windowIsOpen} WindowDisplayed={WindowDisplayed} />
           </div>
         </nav>
       </header>
@@ -49,11 +83,11 @@ const Layout = ({ iAm }) => {
           </main>
           <footer>
             <div className="inner-con footer">
-              <FilterButton setOpenWindow={setOpenWindow} OpenWindow={OpenWindow} setCloseWindow={setCloseWindow} setParams={setParams} iAm={iAm} setContentSize={setContentSize} />
+              <FilterButton setParams={setParams} contentSize={contentSize} handleWindow={handleWindow} />
             </div>
           </footer>
         </div>
-        {OpenWindow && <Window OpenWindow={OpenWindow} CloseWindow={CloseWindow} params={params} />}
+        {WindowDisplayed && <Window WindowDisplayed={WindowDisplayed} CloseWindow={CloseWindow} params={params} handleWindow={handleWindow} contentSize={contentSize} />}
       </div>
 
     </div>

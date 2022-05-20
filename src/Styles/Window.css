@@ -1,7 +1,6 @@
 .window {
-  height: 100%;
+  height: 88vh;
   width: 450px;
-  margin-left: 25px;
   background-color: aqua;
 }
 .window-header {
