@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 // CSS & Assets
 import "../../Styles/Layout.css";
-import Logo from "../../Assets/DM-Logo.png";
+import Logo from "../../Assets/LM-Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWrench } from "@fortawesome/free-solid-svg-icons";
 
