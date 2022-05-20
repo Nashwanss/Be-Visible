@@ -2,7 +2,6 @@
     height: 40px;
     transform: translate(0, 5px);
 }
-
 .dashboard-container {
     background-color: #fff;
     width: 100%;
@@ -23,7 +22,6 @@
     align-items: center;
 
 }
-
 .search-bar {
     width : 80%;
     height: 25px;
