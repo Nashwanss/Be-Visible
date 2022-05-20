@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" index element={<Layout whatIs="Dashboard" iAm="learner"/>} />
+        <Route path="/" index element={<Layout iAm="coach"/>} />
       </Routes>
     </Router>
   );
