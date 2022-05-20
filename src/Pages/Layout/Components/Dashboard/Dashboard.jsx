@@ -21,7 +21,7 @@ const Dashboard = () => {
                     ${<FontAwesomeIcon icon={faCheckSquare} />}`} />
                     <div className="search-bottom"></div>
                 </div>
-                <div className="dashboard-content">
+                <div className="cards-container">
                     <Card  />
                 </div>
             </div>
