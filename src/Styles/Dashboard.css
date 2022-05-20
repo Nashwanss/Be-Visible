@@ -1,12 +1,10 @@
 .logo {
     width: 100px;
 }
-
 .dashboard-container {
     display : flex;
     justify-content: center;
 }
-
 .search-bar {
     width : 60%;
     height: 45px;
