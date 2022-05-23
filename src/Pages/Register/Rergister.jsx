@@ -11,6 +11,7 @@ const Register = () => {
         <div className="login-container">
           <div className="form-container">
             <img src={logo} alt="logo" className="login-logo" />
+            <div className="form-title">Create an account</div>
             <form className="form" action="dashboard">
               <input
                 type="email"
