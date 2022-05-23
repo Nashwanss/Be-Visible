@@ -30,7 +30,7 @@ const Layout = ({ iAm }) => {
   const [contentSize, setContentSize] = useState({ width: "100%", height: "100%", flexDirection: "row", justifyContent: "center", alignItems: "none" });
 
   useEffect(() => {
-    console.log(params)
+    // console.log(params)
   }, [params])
 
   const handleWindow = (openValue, closeValue, whatWindow) => {
@@ -60,7 +60,7 @@ const Layout = ({ iAm }) => {
   }
 
   useEffect(() => {
-    console.log(windowIsOpen)
+    // console.log(windowIsOpen)
   }, [windowIsOpen])
 
   return (
@@ -78,7 +78,7 @@ const Layout = ({ iAm }) => {
       <div className="content" style={contentSize}>
         <div className="wrapper">
           <main>
-            <div className="inner-con dashboard">
+            <div className="inner-con">
               <Dashboard />
             </div>
           </main>
