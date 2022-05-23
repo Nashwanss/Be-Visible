@@ -1,14 +1,17 @@
 import '../../../../../Styles/Dashboard.css';
 
-const Card = () => {
+const Card = (props) => {
+
+    // console.log(props)
 
     return (
         <>
             <div className="dashboard-card">
-            <img src="https://i0.wp.com/donwinn.blog/wp-content/uploads/2015/10/nerdy-boy-small.jpg?ssl=1" alt="profile-img" className="dashboard-card-photo"/>
+                
+            <img src={props.photo} alt="profile-img" className="dashboard-card-photo"/>
                 <div className="dashboard-card-info">
-                    <h6>Nashwan Kurdali</h6>
-                    <h6>Front-End developer</h6>
+                    <h6>{props.name}</h6>
+                    <h6>{props.position}</h6>
                 </div>
             </div>  
 
