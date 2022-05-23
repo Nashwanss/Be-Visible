@@ -22,6 +22,7 @@ const Dashboard = () => {
             name={learner.name}
             photo={learner.photo}
             position={learner.position}
+            status={learner.status}
             />
         )
     })
@@ -30,7 +31,6 @@ const Dashboard = () => {
         <>
             <div className="dashboard-container">
                 <div className="search-bar-container">
-                    <div className="search-top"> </div>
                     <input type="text" className="search-bar" placeholder="&#xF002; Search" style={{fontFamily: 'FontAwesome, Arial', fontStyle: 'normal', fontSize: '16px' , letterSpacing: '2px'}}/> 
                     {/* <input type="submit" value="Search" class="search-btn" /> */}
                     
