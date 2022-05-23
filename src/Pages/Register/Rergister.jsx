@@ -2,7 +2,7 @@ import logo from "../../Assets/LM-Logo.png";
 import background from "../../Assets/background.jpeg";
 import "../../Styles/Login.css";
 
-const LogIn = () => {
+const Register = () => {
   return (
     <>
       <div
@@ -20,18 +20,22 @@ const LogIn = () => {
               <input
                 type="password"
                 className="form__input"
-                placeholder="******"
+                placeholder="E-mail"
+              />
+              <input
+                type="password"
+                className="form__input"
+                placeholder="Password"
+              />
+              <input
+                type="password"
+                className="form__input"
+                placeholder="Confirm Password"
               />
               <button className="form__button form__button--primary">
-                Sign In
+                Sign Up
               </button>
             </form>
-            <div className="form-bottom">
-              <input className="login-check-box" type="checkbox" /> Remember me
-            </div>
-            <div className="create-account">
-            Do not have an account?<a href="/Register"> Sign up</a> 
-            </div>
           </div>
         </div>
       </div>
@@ -39,4 +43,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default Register;
