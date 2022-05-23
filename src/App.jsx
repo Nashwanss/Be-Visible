@@ -8,6 +8,7 @@ import Layout from "./Pages/Layout/Layout";
 import Filter from "./Pages/Layout/Components/Window/Components/Filter/Filter";
 import MyProfile from "./Pages/Layout/Components/Window/Components/MyProfile/MyProfile";
 import CoachManager from "./Pages/Layout/Components/Window/Components/CoachManager/CoachManager";
+import Login from "./Pages/LogIn/LogIn";
 
 
 
