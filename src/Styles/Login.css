@@ -37,12 +37,11 @@
   background-color: #dee2e6;
 }
 .form-bottom {
-  font-style: italic;
   font-size: 17px;
   color: rgb(149, 149, 149);
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .login-check-box {
   height: 20px;
@@ -58,4 +57,15 @@
   cursor: pointer;
   color: white;
   background-color: #3c8891;
+}
+
+.create-account {
+  display: flex;
+  justify-content: center;
+  font-size: small;
+  margin-top: 15px;
+  color: rgb(149, 149, 149);
+}
+a {
+  color: #3c8891;
 }
