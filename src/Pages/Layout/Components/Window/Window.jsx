@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import '../../../../Styles/Window.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -43,13 +44,28 @@ const Window = ({ CloseWindow, params, handleWindow, contentSize }) => {
 
     }
 
+    const whichIcon = () => {
+        if (params.type === "menu" && params.iAm === "learner") {
+            return <FontAwesomeIcon icon={faAddressCard} />
+        } else if (params.type === "filter") {
+            return <button className='btn'>Reset</button>
+        } else {
+            return null
+        }
+    }
+
     return (
         <div className="window" style={{ transform: `translate${xOrY}(${translate})`, transition: "transform 0.8s", marginLeft: marginLeft }}>
             <div className="window-header">
                 <div className="inner-con">
-                    <div className="window-header-edge left">{params.iAm === "learner" ? <FontAwesomeIcon icon={faAddressCard} /> : null}</div>
+                    <div className="window-header-edge left">{whichIcon()}</div>
                     <div className="window-header-middle">{title} </div>
                     <div className="window-header-edge right"> <FontAwesomeIcon icon={faXmark} onClick={() => { handleClick() }} /> </div>
+                </div>
+            </div>
+            <div className="window-content">
+                <div className="inner-con">
+                    <Outlet />
                 </div>
             </div>
         </div>
