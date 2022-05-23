@@ -19,7 +19,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Navigate to="/dashboard" />} />
+        <Route path="/" index element={<Login />} />
         <Route path="dashboard" element={<Layout iAm="learner" />} >
           <Route path="filter" element={<Filter />} />
           <Route path="myprofile" element={<MyProfile />} />
@@ -31,3 +31,5 @@ const App = () => {
 }
 
 export default App;
+
+
