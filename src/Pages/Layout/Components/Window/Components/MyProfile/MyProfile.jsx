@@ -1,9 +1,9 @@
-import { useState, useRef } from 'react';
-
+import { useState, useRef, useEffect } from 'react';
+import { Disclosure } from '@headlessui/react'
 
 import './MyProfile.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare, faInfo, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 
 const Section = (props) => {
@@ -16,9 +16,29 @@ const Section = (props) => {
 
 const UserInfo = () => {
     const [isDisabled, setIsDisabled] = useState(true);
-    const inputEl = useRef(null);
+    const [OTWBtnClass, setOTWBtnClass] = useState("btn");
+    const inputName = useRef(null);
+
     const editMode = () => {
         setIsDisabled(!isDisabled);
+    }
+
+    useEffect(() => {
+        // current property is refered to input element
+        inputName.current.focus();
+    }, [isDisabled])
+
+    const handleClick = () => {
+        if (isDisabled) {
+            return
+        }
+        if (!isDisabled && OTWBtnClass === "btn") {
+            setOTWBtnClass("btn btn-var");
+        }
+        if (!isDisabled && OTWBtnClass === "btn btn-var") {
+            setOTWBtnClass("btn");
+        }
+
     }
 
 
@@ -32,7 +52,7 @@ const UserInfo = () => {
 
                 </div>
                 <div className="user-info-right-top-middle">
-                    <input type="text" className='name' disabled={isDisabled} value={"Name"} />
+                    <input type="text" ref={inputName} className='name' disabled={isDisabled} value={"Name"} />
                     <input type="text" className='field' disabled={isDisabled} value={"Field"} />
                     <input type="text" className='location' disabled={isDisabled} value={"Location"} />
                 </div>
@@ -41,19 +61,50 @@ const UserInfo = () => {
                 </div>
             </div>
             <div className="user-info-right-bottom">
-                <button className='btn'>Open to work</button>
-                <button className='btn btn-var'> {"< Promotion />"} </button>
+                <button className={OTWBtnClass} onClick={() => handleClick()} >Open to work</button>
+                <button className='btn'> {"< Promotion />"} </button>
             </div>
         </div>
     </Section>;
 }
 
+const ProfDisclosure = (props) => {
+    return <Section cname={"disclosure " + props.cname}>
+        <Disclosure>
+            <Disclosure.Button>
+                <div className="disclosure-title">
+                    <FontAwesomeIcon icon={props.icon} />
+                    <h2>
+                        {props.title}
+                    </h2>
+                    <FontAwesomeIcon icon={faAngleDown} />
+                </div>
+
+            </Disclosure.Button>
+            <Disclosure.Panel>
+                {props.children}
+            </Disclosure.Panel>
+        </Disclosure>
+    </Section>
+}
+
+
+const About = () => {
+    return <ProfDisclosure cname={"about"} title={"About"} icon={faInfo} >
+        <div className="disclosure-content about">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore asperiores officia officiis voluptatum! Delectus, deserunt asperiores laudantium autem voluptatum ad in recusandae saepe exercitationem. Magni earum inventore animi enim a?</p>
+        </div>
+    </ProfDisclosure>
+}
 
 
 const MyProfile = () => {
     return <>
         <UserInfo />
+        <About />
     </>;
 }
 
 export default MyProfile;
+
+
