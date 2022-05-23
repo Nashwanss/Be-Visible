@@ -46,7 +46,7 @@ const FilterButton = ({ setParams, contentSize, handleWindow }) => {
         handleWindow({ ...contentSize, height: "176vh", flexDirection: "column", justifyContent: "none", alignItems: "center" }, { ...contentSize, height: "88vh", flexDirection: "none", justifyContent: "center", alignItems: "none" }, "filter")
 
     }
-    return <Link to="./filter"><button className="btn" onClick={() => handleClick()}><FontAwesomeIcon icon={faSliders} className="mg-r-5" /> Filter</button></Link>
+    return <Link to="./filter"><button className="btn" onClick={() => handleClick()}><FontAwesomeIcon icon={faSliders} className="mg-r-5" /> Filters</button></Link>
 }
 
 export { FilterButton, TopRightButton }
