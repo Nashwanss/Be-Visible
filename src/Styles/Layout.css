@@ -90,6 +90,11 @@ footer {
   justify-content: center;
   align-items: center;
 }
+.btn-var {
+  color: rgb(143, 143, 143);
+  background-color: white;
+  border: 1px solid rgb(143, 143, 143);
+}
 
 .mg-r-5 {
   margin-right: 5px;

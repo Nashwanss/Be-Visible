@@ -1,9 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router";
+import { BrowserRouter } from 'react-router-dom';
 
 
 
 import "../src/Styles/App.css";
-import Login from "./Pages/LogIn/LogIn";
+import Layout from "./Pages/Layout/Layout";
+import Filter from "./Pages/Layout/Components/Window/Components/Filter/Filter";
+import MyProfile from "./Pages/Layout/Components/Window/Components/MyProfile/MyProfile";
+import CoachManager from "./Pages/Layout/Components/Window/Components/CoachManager/CoachManager";
+
+
 
 
 
@@ -11,11 +17,16 @@ import Login from "./Pages/LogIn/LogIn";
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" index element={<Login iAm="learner"/>} />
+        <Route index element={<Navigate to="/dashboard" />} />
+        <Route path="dashboard" element={<Layout iAm="learner" />} >
+          <Route path="filter" element={<Filter />} />
+          <Route path="myprofile" element={<MyProfile />} />
+          <Route path="coachmanager" element={<CoachManager />} />
+        </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

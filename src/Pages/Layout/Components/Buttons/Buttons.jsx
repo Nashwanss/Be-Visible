@@ -1,3 +1,7 @@
+
+import { Link } from "react-router-dom";
+
+
 // CSS & Assets
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWrench, faSliders } from "@fortawesome/free-solid-svg-icons";
@@ -11,11 +15,13 @@ import { faWrench, faSliders } from "@fortawesome/free-solid-svg-icons";
 const TopRightButton = ({ setParams, iAm, contentSize, handleWindow, windowIsOpen, WindowDisplayed }) => {
 
     const displayWhat = () => { // To know what to display as button
+        let whatToDisplay;
         if (iAm === "learner") {
-            return <div className="profile-button" onClick={() => handleClick()}></div>
+            whatToDisplay = <Link to="./myprofile"><div className="profile-button" onClick={() => handleClick()}></div></Link>
         } else if (iAm === "coach") {
-            return <FontAwesomeIcon icon={faWrench} onClick={() => handleClick()} />
+            whatToDisplay = <Link to="./coachmanager"><FontAwesomeIcon icon={faWrench} onClick={() => handleClick()} /></Link>
         }
+        return whatToDisplay;
     }
 
     const handleClick = () => {
@@ -40,7 +46,7 @@ const FilterButton = ({ setParams, contentSize, handleWindow }) => {
         handleWindow({ ...contentSize, height: "176vh", flexDirection: "column", justifyContent: "none", alignItems: "center" }, { ...contentSize, height: "88vh", flexDirection: "none", justifyContent: "center", alignItems: "none" }, "filter")
 
     }
-    return <button className="btn" onClick={() => handleClick()}><FontAwesomeIcon icon={faSliders} className="mg-r-5" /> Filter</button>
+    return <Link to="./filter"><button className="btn" onClick={() => handleClick()}><FontAwesomeIcon icon={faSliders} className="mg-r-5" /> Filter</button></Link>
 }
 
 export { FilterButton, TopRightButton }
