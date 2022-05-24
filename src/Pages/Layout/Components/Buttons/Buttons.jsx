@@ -25,7 +25,6 @@ const TopRightButton = ({ setParams, iAm, contentSize, handleWindow, windowIsOpe
     }
 
     const handleClick = () => {
-        console.log(WindowDisplayed + " " + windowIsOpen.filter)
         if (!WindowDisplayed && windowIsOpen.filter === false) {
             setParams(prevParams => ({ ...prevParams, type: "menu", marginLeft: "25px" }));
             handleWindow({ ...contentSize, width: "925px", flexDirection: "row", justifyContent: "center", alignItems: "none" }, { ...contentSize, width: "450px", flexDirection: "row", justifyContent: "center", alignItems: "none" }, "menu")
