@@ -11,7 +11,7 @@
 .section .label {
   display: flex;
 }
-.section.disclosure button {
+.button-disclosure {
   background-color: transparent;
   width: 40%;
   border: none;
@@ -19,7 +19,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-.section.disclosure button h2 {
+.button-disclosure h2 {
   margin: 0 10px;
 }
 .disclosure-edit {
@@ -32,9 +32,6 @@
 }
 .disclosure-content {
   margin-top: 20px;
-  background: rgba(71, 145, 154, 0.04);
-  border-radius: var(--main-border-radius);
-  padding: 20px;
   font-size: 0.7em;
   height: auto;
 }
@@ -44,4 +41,22 @@
 }
 .rotate-180 {
   transform: rotate(180deg);
+}
+
+.edit-input input {
+  border: 1px solid #000000;
+  border-radius: 7px;
+}
+.edit-input textarea {
+  border: 1px solid #000000;
+  border-radius: 7px;
+}
+.edit-input .user-info-pic {
+  border: 1px solid #000000;
+}
+.edit-input .job-image {
+  border: 1px solid #000000;
+}
+.edit-input #otw {
+  border: 1px solid #000000;
 }

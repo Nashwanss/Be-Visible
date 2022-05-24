@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 
-import { Section } from '../Sections'
+import { Section } from '../../../Sections/Sections'
 
 
 import './UserInfo.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { Switch } from '@headlessui/react'
+
 
 
 const UserInfo = () => {
@@ -36,7 +36,7 @@ const UserInfo = () => {
     }
 
 
-    return <Section cname="user-info">
+    return <Section cname={`user-info ${!isDisabled && "edit-input"}`}>
         <div className="user-info-left">
             <div className="user-info-pic"></div>
         </div>
@@ -51,11 +51,22 @@ const UserInfo = () => {
                     <input type="text" className='location' disabled={isDisabled} value={"Location"} />
                 </div>
                 <div className="user-info-right-top-right">
-                    <FontAwesomeIcon className='edit' icon={faPenToSquare} onClick={() => editMode()} />
+                    <Switch
+                        checked={!isDisabled}
+                        onChange={editMode}
+                        className={`${!isDisabled ? 'bg-blue-600' : 'bg-gray-200'
+                            } relative inline-flex h-6 w-11 items-center rounded-full`}
+                    >
+                        <span className="sr-only">Enable notifications</span>
+                        <span
+                            className={`${!isDisabled ? 'translate-x-6' : 'translate-x-1'
+                                } inline-block h-4 w-4 transform rounded-full bg-white`}
+                        />
+                    </Switch>
                 </div>
             </div>
             <div className="user-info-right-bottom">
-                <button className={OTWBtnClass} onClick={() => handleClick()} >Open to work</button>
+                <button className={OTWBtnClass} id="otw" onClick={() => handleClick()} >Open to work</button>
                 <button className='btn'> {"< Promotion />"} </button>
             </div>
         </div>
