@@ -51,7 +51,9 @@
     position: relative;
     width:45%;
     height: 280px;
-}
+    cursor: pointer;
+    }
+
 
 
 .user-pic {
