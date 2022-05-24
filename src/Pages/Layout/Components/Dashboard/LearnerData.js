@@ -44,7 +44,7 @@ const learner =[
         Starting_date: '01/09/2022',
         },
         {   
-            id: 1,
+            id: 5,
             photo: 'https://www.pageantparty.co.uk/wp-content/uploads/2014/03/29111.jpg',
             name: 'Nashwan Kurdali',
             position: 'Front-End Developer',
@@ -55,7 +55,7 @@ const learner =[
             Starting_date: '01/08/2022',
         },
         {   
-            id: 2,
+            id: 6,
             photo: 'https://images.freeimages.com/images/premium/previews/3411/34112724-funny-nerd-woman-smiling.jpg',
             name: 'Taguhi Karakashyan',
             position: 'Front-End Developer',
@@ -66,7 +66,7 @@ const learner =[
             Starting_date: '25/07/2022',
         },
         {
-            id: 3,
+            id: 7,
             photo: 'https://st.depositphotos.com/1759606/2726/i/950/depositphotos_27266141-stock-photo-surprised-nerd-guy.jpg',
             name: 'Sebastian Herrera',
             position: 'Front-End Developer',
@@ -77,7 +77,7 @@ const learner =[
             Starting_date: '01/08/2022',
         },
         {
-        id: 4,
+        id: 8,
         photo: 'https://assets.entrepreneur.com/content/3x2/2000/20190425112608-7-Reasons-Why-Nerds-Rule-The-Business-World.jpeg?crop=1:1',
         name: 'Liban Abdullahi',
         position: 'Back-End Developer',
