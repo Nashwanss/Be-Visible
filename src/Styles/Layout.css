@@ -52,21 +52,16 @@
 }
 main {
   display: flex;
-  height: 80%;
+  height: 85%;
   width: 100%;
   justify-content: center;
-}
-.dashboard {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20%;
+  height: 15%;
   width: 100%;
 }
 .footer {

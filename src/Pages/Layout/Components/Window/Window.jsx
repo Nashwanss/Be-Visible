@@ -30,7 +30,7 @@ const Window = ({ CloseWindow, params, handleWindow, contentSize }) => {
             }
         } else if (params.type === "filter") {
             setTranslate("-88vh")
-            setTitle("Filter");
+            setTitle("Filters");
             setXorY("Y")
         }
     }, [])

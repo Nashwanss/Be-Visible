@@ -37,16 +37,16 @@
   background-color: #dee2e6;
 }
 .form-bottom {
-  font-style: italic;
   font-size: 17px;
   color: rgb(149, 149, 149);
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .login-check-box {
   height: 20px;
   width: 20px;
+  margin-right: 4px;
 }
 .form__button--primary {
   height: 60px;
@@ -58,4 +58,24 @@
   cursor: pointer;
   color: white;
   background-color: #3c8891;
+}
+
+.create-account {
+  display: flex;
+  justify-content: center;
+  font-size: small;
+  margin-top: 15px;
+  color: rgb(149, 149, 149);
+}
+a {
+  color: #3c8891;
+  margin-left: 5px;
+}
+
+.form-title {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #3c8891;
+  font-weight: bolder;
 }
