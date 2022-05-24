@@ -19,7 +19,7 @@ const ProfDisclosure = (props) => {
         <Disclosure>
             {({ open }) => (
                 <>  <div className="label">
-                    <Disclosure.Button>
+                    <Disclosure.Button className={"button-disclosure"}>
                         <FontAwesomeIcon icon={props.icon} />
                         <h2>
                             {props.title}

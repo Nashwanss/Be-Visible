@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
 
+
 * {
   margin: 0;
 }
@@ -28,7 +29,15 @@ body {
 a {
   text-decoration: none;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Oxygen", sans-serif;
   margin: 0;
+}
+input {
+  transition: border 1s ease-in-out;
 }

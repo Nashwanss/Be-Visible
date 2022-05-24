@@ -54,6 +54,7 @@
   border: none;
   text-align: center;
   color: black;
+   width: 80%;
   margin-top: 3px;
 }
 .user-info-right-top input:focus {

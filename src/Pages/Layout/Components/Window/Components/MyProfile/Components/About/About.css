@@ -1,19 +1,24 @@
+.disclosure-content.about {
+  border-radius: var(--main-border-radius);
+  background: rgba(71, 145, 154, 0.04);
+  padding: 20px;
+}
 .disclosure-content textarea {
-    color: black;
-    text-align: center;
-    font-style: italic;
-    resize: none;
-    width: 100%;
-    min-height: 150px;
-    background-color: transparent;
-    border: none;
-    font-family: "Oxygen", sans-serif;
-  }
-  .disclosure-content textarea:focus {
-    outline: none;
-  }
-  
-  .disclosure-content.about {
-    text-align: center;
-    font-style: italic;
-  }
+  color: black;
+  text-align: center;
+  font-style: italic;
+  resize: none;
+  width: 100%;
+  min-height: 150px;
+  background-color: transparent;
+  border: none;
+  font-family: "Oxygen", sans-serif;
+}
+.disclosure-content textarea:focus {
+  outline: none;
+}
+
+.disclosure-content.about {
+  text-align: center;
+  font-style: italic;
+}

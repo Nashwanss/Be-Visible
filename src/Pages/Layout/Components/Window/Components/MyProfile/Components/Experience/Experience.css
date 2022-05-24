@@ -1,0 +1,126 @@
+.experience {
+  padding: 0%;
+  background-color: transparent;
+}
+.experience input {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+.card {
+  display: flex;
+  background: rgba(71, 145, 154, 0.04);
+  padding: 25px;
+  border-radius: var(--main-border-radius);
+  margin-top: 10px;
+}
+.card-left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-right: 25px;
+}
+.card-left-top {
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
+.job-image {
+  height: 110px;
+  width: 110px;
+  background-color: blue;
+}
+.card-left-bottom {
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
+.duration {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+}
+.duration input {
+  width: 100px;
+  text-align: center;
+  font-size: 1em;
+}
+.card-middle {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60%;
+  font-size: 0.9em;
+}
+.card-middle ul {
+  margin-top: 15px;
+}
+.card-middle-top {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+}
+.card-middle-top input{
+  width: 90%;
+}
+.card-middle-top .position {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: start;
+}
+.card-middle-top .company-name {
+  font-size: 0.7em;
+  margin-top: 5px;
+  color: rgb(27, 27, 27);
+  text-align: start;
+}
+.card-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.card-right svg {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.card-right svg:hover {
+  transform: translate(0px, -2px);
+}
+.card-middle-bottom li {
+  font-size: 0.9em;
+  width: 160px;
+}
+.card-middle-bottom li svg {
+  cursor: pointer;
+}
+.card-middle-bottom li svg:hover {
+  transform: translate(0px, -2px);
+}
+.card-middle-bottom input {
+  width: 120px;
+  font-size: inherit;
+  font-weight: 100;
+}
+.add-button-con {
+  display: flex;
+  justify-content: center;
+}
+.add-button-con button {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  cursor: pointer;
+}
+.add-button-con button svg {
+  margin-right: 5px;
+}
+.add-button-con button svg:hover {
+  transform: translate(0px, -2px);
+}
