@@ -29,9 +29,6 @@ const Layout = ({ iAm }) => {
 
   const [contentSize, setContentSize] = useState({ width: "100%", height: "100%", flexDirection: "row", justifyContent: "center", alignItems: "none" });
 
-  useEffect(() => {
-    // console.log(params)
-  }, [params])
 
   const handleWindow = (openValue, closeValue, whatWindow) => {
 
@@ -41,7 +38,6 @@ const Layout = ({ iAm }) => {
       const newInterval = setInterval(() => {
         seconds++
         if (seconds === 1) {
-          console.log(closeValue)
           setContentSize(closeValue)
           setWindowDisplayed(false)
           setCloseWindow(false)
@@ -59,9 +55,7 @@ const Layout = ({ iAm }) => {
     }
   }
 
-  useEffect(() => {
-    // console.log(windowIsOpen)
-  }, [windowIsOpen])
+
 
   return (
     <div className="layout">

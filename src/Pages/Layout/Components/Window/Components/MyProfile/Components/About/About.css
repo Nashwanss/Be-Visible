@@ -1,0 +1,19 @@
+.disclosure-content textarea {
+    color: black;
+    text-align: center;
+    font-style: italic;
+    resize: none;
+    width: 100%;
+    min-height: 150px;
+    background-color: transparent;
+    border: none;
+    font-family: "Oxygen", sans-serif;
+  }
+  .disclosure-content textarea:focus {
+    outline: none;
+  }
+  
+  .disclosure-content.about {
+    text-align: center;
+    font-style: italic;
+  }

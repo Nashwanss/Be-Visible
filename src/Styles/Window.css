@@ -41,5 +41,6 @@
   align-items: center;
 }
 .window-content .inner-con {
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
 }

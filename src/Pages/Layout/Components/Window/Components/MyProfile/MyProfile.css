@@ -3,88 +3,45 @@
   width: 100%;
   margin-top: 20px;
 }
-.section.user-info {
-  height: 150px;
-}
 
-.user-info-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35%;
-  height: 100%;
-}
-.user-info-pic {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  background-color: rgb(210, 210, 210);
-}
-.user-info-right {
-  display: flex;
+.section.disclosure {
   flex-direction: column;
-  width: 65%;
-  height: 100%;
+  height: auto;
 }
-.user-info-right-top {
-  font-size: 0.7em;
+.section .label {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 70%;
 }
-.user-info-right-top-left {
-  height: 100%;
-  width: 10%;
-}
-.user-info-right-top-middle {
-  height: 100%;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.user-info-right-top-right {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-  width: 10%;
-}
-.user-info-right-top input {
+.section.disclosure button {
   background-color: transparent;
+  width: 40%;
   border: none;
-  text-align: center;
-  color: black;
-  margin-top: 3px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.user-info-right-top input.name {
-  font-size: 1.1em;
-  font-weight: 600;
+.section.disclosure button h2 {
+  margin: 0 10px;
 }
-.user-info-right-top input.field {
-  font-size: 0.9em;
-  font-weight: 500;
+.disclosure-edit {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.7em;
+}
+.disclosure-content {
+  margin-top: 20px;
+  background: rgba(71, 145, 154, 0.04);
+  border-radius: var(--main-border-radius);
+  padding: 20px;
+  font-size: 0.7em;
+  height: auto;
 }
 
-.user-info-right-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30%;
-  width: 100%;
+.arrow {
+  transition: transform 0.2s ease-in-out;
 }
-.user-info-right-bottom .btn {
-  font-size: 0.6em;
-  width: 125px;
-  height: 40px;
-}
-.edit {
-  cursor: pointer;
-}
-.edit:hover {
-  transform: translate(0px, -1px);
+.rotate-180 {
+  transform: rotate(180deg);
 }
