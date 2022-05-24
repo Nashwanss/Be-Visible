@@ -11,9 +11,15 @@ const Card = (props) => {
     else {
         badge = "Not available" }
 
+    const ProfileAccessHandler = () => {
+        console.log('test')
+    
+        
+    }
+
     return (
         <>
-            <div className="dashboard-card">
+            <div onClick={ProfileAccessHandler} className="dashboard-card">
                 <div className="user-pic" style={{
                     backgroundImage : `url(${props.photo})`,
                     backgroundSize : 'cover',
