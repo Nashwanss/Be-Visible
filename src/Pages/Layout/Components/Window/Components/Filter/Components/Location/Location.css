@@ -1,0 +1,5 @@
+.disclosure-content.location {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1em;
+}
