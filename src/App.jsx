@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router";
+import { Routes, Route } from "react-router";
 import { BrowserRouter } from 'react-router-dom';
 
 
@@ -25,7 +25,7 @@ const App = () => {
 
         <Route path="/" index element={<Login />} />
         <Route path="register" index element={<Register />} />
-        <Route path="dashboard" element={<Layout iAm="learner" />} >
+        <Route path="dashboard" element={<Layout iAm="coach" />} >
           <Route path="filter" element={<Filter />} />
           <Route path="myprofile" element={<MyProfile />} />
           <Route path="coachmanager" element={<CoachManager />} />

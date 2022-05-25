@@ -1,4 +1,4 @@
-import '../../../../Styles/Dashboard.css';
+import './Dashboard.css';
 
 
 
