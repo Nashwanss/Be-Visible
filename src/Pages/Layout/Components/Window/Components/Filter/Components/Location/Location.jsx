@@ -10,13 +10,12 @@ const Button = ({ location, on, setLocations }) => {
       return;
     } else {
       setLocations((prevLocations) => {
-        prevLocations.map((item) => {
-          if (location === item.location) {
-            return { location: item.location, on: true };
-          } else {
-            return { location: item.location, on: false };
-          }
-        });
+        const newLocations = prevLocations.map((item) =>
+          item.location === location
+            ? { ...item, on: true }
+            : { ...item, on: false }
+        );
+        return newLocations;
       });
     }
   };
@@ -35,9 +34,10 @@ const Location = () => {
   return (
     <ProfDisclosure cname={"location"} icon={faLocationDot} title={"Location"}>
       <div className="disclosure-content location">
-        {locations.map((item,index) => {
+        {locations.map((item, index) => {
           return (
-            <Button key={index}
+            <Button
+              key={index}
               location={item.location}
               on={item.on}
               setLocations={setLocations}
