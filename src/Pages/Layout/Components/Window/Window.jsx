@@ -33,7 +33,7 @@ const Window = ({ CloseWindow, params, handleWindow, contentSize }) => {
             setTitle("Filters");
             setXorY("Y")
         }
-    }, [])
+    }, [params.type, params.iAm])
 
     const handleClick = () => {
         if (params.type === "menu") {

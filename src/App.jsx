@@ -14,15 +14,10 @@ import Register from "./Pages/Register/Rergister";
 
 
 
-
-
-
-
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/" index element={<Login />} />
         <Route path="register" index element={<Register />} />
         <Route path="dashboard" element={<Layout iAm="coach" />} >
