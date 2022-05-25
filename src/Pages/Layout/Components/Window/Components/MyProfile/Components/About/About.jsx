@@ -9,6 +9,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
 
+
     const [isDisabled, setIsDisabled] = useState(true);
     const textArea = useRef(null)
 

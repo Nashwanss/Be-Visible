@@ -6,7 +6,7 @@ import { ProfDisclosure } from '../../../Sections/Sections'
 
 import './Experience.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faPenToSquare, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 
 const BulletPoint = ({ value, isDisabled, usePlus, addBulletPoint, deleteBulletPoint, index }) => {
