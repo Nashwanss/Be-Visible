@@ -68,7 +68,7 @@ const UserInfo = () => {
     return <Section cname={`user-info ${!isDisabled && "edit-input"}`}>
         <div className="user-info-left">
             <div className="user-info-pic" style={{ backgroundImage: `url(${userInfo.image})` }}>
-                {!isDisabled && <UploadButton setInfo={setUserInfo} />}
+                {!isDisabled && <UploadButton setInfo={setUserInfo} who='userInfo' />}
             </div>
         </div>
         <div className="user-info-right">

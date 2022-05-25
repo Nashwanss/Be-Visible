@@ -28,7 +28,13 @@
 .job-image {
   height: 110px;
   width: 110px;
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color:  grey;
 }
 .card-left-bottom {
   display: flex;
