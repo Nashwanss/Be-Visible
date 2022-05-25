@@ -13,8 +13,15 @@
   width: 130px;
   height: 130px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: rgb(210, 210, 210);
 }
+
 .user-info-right {
   display: flex;
   flex-direction: column;
@@ -54,7 +61,7 @@
   border: none;
   text-align: center;
   color: black;
-   width: 80%;
+  width: 95%;
   margin-top: 3px;
 }
 .user-info-right-top input:focus {
