@@ -1,0 +1,37 @@
+.btn-skill {
+  border: none;
+  background-color: #3c8891;
+  border-radius: var(--main-border-radius);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+.btn-skill.add-new {
+  width: 120px;
+  height: 40px;
+}
+.btn-skill svg:hover {
+  transform: translate(0px, -2px);
+}
+.skills-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+}
+.skills-label select {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: #3c8891;
+  border-radius: var(--main-border-radius);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+.skills-label select option {
+  background-color: white;
+    color: black;
+}
