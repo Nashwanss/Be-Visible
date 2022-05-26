@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import '../../../../Styles/Window.css'
+import './Window.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
