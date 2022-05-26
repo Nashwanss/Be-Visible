@@ -7,6 +7,7 @@ const Availability = () => {
   const [OTWBtnClass, setOTWBtnClass] = useState("btn");
 
   const handleClick = () => {
+    console.log(otw)
     if (OTWBtnClass === "btn") {
         setOtw(true)
       setOTWBtnClass("btn btn-var");

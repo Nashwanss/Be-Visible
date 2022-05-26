@@ -18,7 +18,7 @@ const UploadButton = ({ setInfo, who, index }) => {
             id = id + index
         }
         setMyId(myId + id);
-    }, [])
+    }, [who, myId, index])
     const uploadImage = (e) => {
         const image = e.target.files[0]
         const formData = new FormData()

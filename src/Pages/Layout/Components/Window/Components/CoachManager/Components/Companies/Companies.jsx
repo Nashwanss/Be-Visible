@@ -1,7 +1,6 @@
 import {ProfDisclosure } from "../../../Sections/Sections";
 import { faBuilding } from "@fortawesome/free-solid-svg-icons";
 import './Companies.css';
-import CompaniesData from "./CompaniesData";  
 
 
 
