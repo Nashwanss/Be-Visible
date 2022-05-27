@@ -17,7 +17,7 @@ const AddNewSkill = () => {
     return (<><label className='skills-label' htmlFor="skills"><select id="skills" ref={skillsSelect} name="skills">
         <option value={'add-new'}> Add new</option>
         {skillOptions.map((skill, i) => {
-            return <option key={i} value={skill.name}>{skill.name}</option>
+            return <option key={i} value={skill.name}>{skill.name.toUpperCase()}</option>
         })}
     </select> </label>
     </>)
