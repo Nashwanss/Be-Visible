@@ -4,7 +4,23 @@
   border-radius: var(--main-border-radius);
   color: white;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.btn-skill span {
+  margin-left: 5px;
+}
+.btn-skill svg {
+  margin-left: 5px;
   cursor: pointer;
+}
+
+.skill-icon {
+  width: 20px;
+  height: 20px;
 }
 .btn-skill.add-new {
   width: 120px;
@@ -33,5 +49,12 @@
 }
 .skills-label select option {
   background-color: white;
-    color: black;
+  color: black;
+}
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 10px;
+    background-color: aqua;
+
 }

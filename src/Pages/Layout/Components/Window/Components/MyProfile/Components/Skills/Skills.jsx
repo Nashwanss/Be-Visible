@@ -1,14 +1,14 @@
 import { useRef, useState } from 'react'
 
 import { ProfDisclosure } from '../../../Sections/Sections'
-import { faLaptopCode, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faLaptopCode, faXmark } from '@fortawesome/free-solid-svg-icons'
 import faHTML from './assets/html5.svg'
 
 import './Skills.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Button = ({ icon, name, edit, cname, clickFunc }) => {
-    return (<button className={`btn-skill ${cname}`} >{icon !== null && icon} {name} {edit}  </button>);
+const Button = ({ icon, name, edit, cname }) => {
+    return (<button className={`btn-skill ${cname}`} >{icon !== null && <img src={icon} className="skill-icon" />} <span> {name}</span> {edit}  </button>);
 }
 
 const AddNewSkill = () => {
@@ -17,7 +17,7 @@ const AddNewSkill = () => {
     return (<><label className='skills-label' htmlFor="skills"><select id="skills" ref={skillsSelect} name="skills">
         <option value={'add-new'}> Add new</option>
         {skillOptions.map((skill, i) => {
-            return <option key={i} value={skill.name}>{skill.name.toUpperCase()}</option>
+            return <option key={i} value={skill.name}>{skill.name}</option>
         })}
     </select> </label>
     </>)
@@ -28,6 +28,7 @@ const Skills = () => {
 
     const [isDisabled, setIsDisabled] = useState(true)
     const [hasEdited, setHasEdited] = useState(false);
+    const [skills, setSkills] = useState([{ name: "html", icon: faHTML }])
     const editMode = () => {
         if (!hasEdited) {
             setIsDisabled(!isDisabled);
@@ -39,7 +40,9 @@ const Skills = () => {
     }
     return (<ProfDisclosure cname="skills" title="Skills" icon={faLaptopCode} editMode={editMode}> <div className={`disclosure-content skills `}>
         <div className="skills-container">
-            {!isDisabled && <AddNewSkill />}
+            {!isDisabled && <AddNewSkill />} {skills.map((skill, i) => {
+                return <Button key={i} icon={skill.icon} name={skill.name} edit={<FontAwesomeIcon icon={faXmark} />} cname={`skill-${i}`} />
+            })}
         </div>
     </div> </ProfDisclosure>);
 }
