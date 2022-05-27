@@ -84,12 +84,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .btn-var {
   color: rgb(143, 143, 143);
   background-color: white;
   border: 1px solid rgb(143, 143, 143);
-  text-decoration: line-through;
 }
 
 .mg-r-5 {

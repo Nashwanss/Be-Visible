@@ -1,6 +1,6 @@
 import logo from "../../Assets/LM-Logo.png";
 import background from "../../Assets/background.jpeg";
-import "../../Styles/Login.css";
+import "./Login.css";
 
 const LogIn = () => {
   return (
@@ -11,7 +11,7 @@ const LogIn = () => {
         <div className="login-container">
           <div className="form-container">
             <img src={logo} alt="logo" className="login-logo" />
-            <div className="form-title">Login</div>
+            <div className="form-title">Sign in</div>
             <form className="form" action="dashboard">
               <input
                 type="email"

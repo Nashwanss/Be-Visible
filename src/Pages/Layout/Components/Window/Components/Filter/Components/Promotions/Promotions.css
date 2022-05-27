@@ -1,0 +1,7 @@
+.disclosure-content.promotions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 5px;
+}

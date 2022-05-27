@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 
 import "./Promotions.css";
-import { ProfDisclosure } from "../../../Sections/Sections";
+import { FilterDisclosure } from "../../../Sections/Sections";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 
-const Button = ({ promotion, on, index, setPromotions }) => {
+const Button = ({promotions, promotion, on, index, setPromotions }) => {
 
   
   const handleClick = () => {
-    setPromotions(prevPromotions => {
-      const newPromotions = [...prevPromotions]
-      newPromotions.map((promo,i) => {
+     const newPromotions = promotions.map((promo,i) => {
         if (i === index) {
           const newPromo = promo
           newPromo.on = !newPromo.on
@@ -19,11 +17,10 @@ const Button = ({ promotion, on, index, setPromotions }) => {
           return promo
         }
       })
-      return newPromotions
-    })
+    setPromotions(newPromotions)
   }
   return (
-    <button className="btn" onClick={() => handleClick()}>
+    <button className={on ? "btn" : "btn btn-var"} onClick={() => handleClick()}>
       {promotion}
     </button>
   );
@@ -40,16 +37,17 @@ const Promotions = () => {
   ]);
 
   useEffect(() => {
-    console.log(promotions)
+  
   },[promotions])
   return (
-    <ProfDisclosure
+    <FilterDisclosure
       cname={"promotions"}
       icon={faGraduationCap}
       title={"Promotions"}
     >
       <div className="disclosure-content promotions">
         {promotions.map((item, index) => {
+          
           return (
             <Button
               key={index}
@@ -57,11 +55,12 @@ const Promotions = () => {
               on={item.on}
               index={index}
               setPromotions={setPromotions}
+              promotions ={promotions}
             />
           );
         })}
       </div>
-    </ProfDisclosure>
+    </FilterDisclosure>
   );
 };
 

@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-import { ProfDisclosure } from "../../../Sections/Sections";
+import { FilterDisclosure } from "../../../Sections/Sections";
+
+import "./Availability.css";
 
 const Availability = () => {
   const [otw, setOtw] = useState(false);
@@ -19,13 +21,13 @@ const Availability = () => {
 
 
   return (
-    <ProfDisclosure cname={"availability"} title={"Availability"}>
+    <FilterDisclosure cname={"availability"} title={"Availability"}>
       <div className="disclosure-content availability">
         <button className={OTWBtnClass} id="otw" onClick={() => handleClick()}>
           Open to work
         </button>
       </div>
-    </ProfDisclosure>
+    </FilterDisclosure>
   );
 };
 
