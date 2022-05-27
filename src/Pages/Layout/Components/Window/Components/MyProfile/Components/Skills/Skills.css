@@ -9,6 +9,8 @@
   justify-content: center;
   text-transform: uppercase;
   font-size: 0.9em;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .btn-skill span {
   margin-left: 5px;
@@ -22,28 +24,20 @@
   width: 20px;
   height: 20px;
 }
-.btn-skill.add-new {
-  width: 120px;
-  height: 40px;
-}
-.btn-skill svg:hover {
-  transform: translate(0px, -2px);
-}
 .skills-label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
   height: 40px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .skills-label select {
   position: relative;
   height: 100%;
   width: 100%;
-  border: none;
-  background-color: #3c8891;
+  border: 1px solid #3c8891;
   border-radius: var(--main-border-radius);
-  color: white;
   padding: 10px;
   cursor: pointer;
 }
@@ -52,8 +46,6 @@
   color: black;
 }
 .skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 130px));
-  grid-gap: 10px;
-  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
 }
