@@ -7,7 +7,7 @@ import Card from './Components/Card'
 
 import './Experience.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 

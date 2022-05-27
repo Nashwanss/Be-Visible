@@ -26,7 +26,7 @@ const UserInfo = () => {
         } else {
             setOTWBtnClass("btn");
         }
-    }, [])
+    }, [userInfo.otw])
 
 
     const editMode = () => {

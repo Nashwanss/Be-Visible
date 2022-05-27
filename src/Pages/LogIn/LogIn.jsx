@@ -1,6 +1,6 @@
 import logo from "../../Assets/LM-Logo.png";
 import background from "../../Assets/background.jpeg";
-import "../../Styles/Login.css";
+import "./Login.css";
 
 const LogIn = () => {
   return (
