@@ -60,3 +60,7 @@
 .edit-input #otw {
   border: 1px solid #000000;
 }
+.label svg {
+  height: 15px;
+  width: 15px;
+}

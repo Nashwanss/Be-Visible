@@ -9,6 +9,7 @@ import Logo from "../../Assets/LM-Logo.png";
 // Components
 import Window from "./Components/Window/Window";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import PopUp from "./Components/Pop-up/Pop-up";
 import { TopRightButton, FilterButton } from "./Components/Buttons/Buttons";
 
 
@@ -25,6 +26,9 @@ const Layout = ({ iAm }) => {
   const [windowIsOpen, setWindowIsOpen] = useState({ menu: false, filter: false });
   const [CloseWindow, setCloseWindow] = useState(false);
   const [params, setParams] = useState({ type: "", iAm: iAm, marginLeft: "0px" });
+
+  const [popUpDisplayed, setPopUpDisplayed] = useState(true);
+  const [profileData, setProfileData] = useState({});
 
 
   const [contentSize, setContentSize] = useState({ width: "100%", height: "100%", flexDirection: "row", justifyContent: "center", alignItems: "none" });
@@ -70,10 +74,11 @@ const Layout = ({ iAm }) => {
         </nav>
       </header>
       <div className="content" style={contentSize}>
+        <PopUp popUpDisplayed={popUpDisplayed}/>
         <div className="wrapper">
           <main>
             <div className="inner-con">
-              <Dashboard />
+              <Dashboard setPopUpDisplayed={setPopUpDisplayed} />
             </div>
           </main>
           <footer>
