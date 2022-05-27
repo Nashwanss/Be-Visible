@@ -86,7 +86,7 @@ const learner = [
   {
     id: 8,
     photo:
-      "https://c.pxhere.com/photos/cb/ac/     melancholy_portrait_dramatic_man_person_emotion_feelings_unha  ppy_depression-373566.jpg!d",
+      "https://c.pxhere.com/photos/cb/ac/melancholy_portrait_dramatic_man_person_emotion_feelings_unhappy_depression-373566.jpg!d",
     name: "Liban Abdullahi",
     position: "Back-End Developer",
     email: "libanabdullahi@gmail.com",
