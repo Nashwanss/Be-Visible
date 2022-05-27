@@ -12,7 +12,7 @@ const Button = ({ icon, name, edit, cname }) => {
 }
 
 const AddNewSkill = ({ setSkills }) => {
-    const [skillOptions] = useState([{name: "html", icon: faHTML}])
+    const [skillOptions] = useState([{ name: "html", icon: faHTML }])
     const skillsSelect = useRef(null)
 
     const addSkill = () => {

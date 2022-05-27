@@ -3,11 +3,11 @@ import About from './Components/About/About'
 import Experience from './Components/Experience/Experience';
 import Education from './Components/Education/Education';
 import Skills from './Components/Skills/Skills';
+import Badges from './Components/Badges/Badges';
+import Projects from './Components/Projects/Projects';
 
 
 import './MyProfile.css';
-
-
 
 
 
@@ -18,6 +18,8 @@ const MyProfile = () => {
         <Experience />
         <Education />
         <Skills />
+        <Badges />
+        <Projects />
     </>;
 }
 

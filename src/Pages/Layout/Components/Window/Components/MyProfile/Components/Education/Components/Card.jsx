@@ -84,7 +84,7 @@ const Card = ({ index, deleteCard, isDisabled, education, setEducations }) => {
         <div className="card-left">
             <div className="card-left-top">
                 <div className="job-image" style={{ backgroundImage: `url(${education.image})` }}>
-                    {!isDisabled ? <UploadButton setInfo={setEducations} who="education" index={index} key={index}/> : null}
+                    {!isDisabled ? <UploadButton setInfo={setEducations} who="experience" index={index} key={index}/> : null}
                 </div>
             </div>
             <div className="card-left-bottom">

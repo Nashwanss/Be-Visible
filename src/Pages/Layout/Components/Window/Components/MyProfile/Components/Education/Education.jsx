@@ -54,7 +54,7 @@ const Education = () => {
     return <ProfDisclosure cname={"education"} title={"Education"} icon={faGraduationCap} editMode={editMode} >
         <div className={`disclosure-content education ${!isDisabled && "edit-input"}`}>
             {isDisabled ? null : <div className="add-button-con">
-                <button onClick={() => { addNewCard() }}><FontAwesomeIcon icon={faPlus} /> Add New Education</button>
+                <button onClick={() => { addNewCard() }}><FontAwesomeIcon icon={faPlus} /> Add a New Education</button>
             </div>}
             {educations.map((education, i) => {
                 return <Card key={i} index={i} deleteCard={deleteCard} isDisabled={isDisabled} education={education} setEducations={setEducations} />

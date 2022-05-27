@@ -28,7 +28,8 @@ const ProfDisclosure = (props) => {
                         <FontAwesomeIcon icon={faAngleUp} className={`${open ? "arrow rotate-180" : "arrow"}`} />
                     </Disclosure.Button>
                     <div className="disclosure-edit">
-                        <Toggle width={"40"} height={"24"} sliderWidth={"16"} sliderHeight={"16"} translate={"16"} backgroundColorChecked={"#3c8891"} onChange={() => props.editMode()} />
+                        {props.toggle === false ? null : <Toggle width={"40"} height={"24"} sliderWidth={"16"} sliderHeight={"16"} translate={"16"} backgroundColorChecked={"#3c8891"} onChange={() => props.editMode()} />}
+
                         {/* <FontAwesomeIcon className='edit' icon={faPenToSquare} onClick={() => props.editMode()} /> */}
                     </div>
                 </div>
