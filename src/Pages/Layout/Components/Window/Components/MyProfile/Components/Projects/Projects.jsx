@@ -7,7 +7,7 @@ import Card from './Components/Card'
 
 import './Projects.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faFolder, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -51,7 +51,7 @@ const Projects = () => {
         setProjects(projects.filter((project, i) => i !== index))
     }
 
-    return <ProfDisclosure cname={"projects"} title={"Projects"} icon={faBriefcase} editMode={editMode} >
+    return <ProfDisclosure cname={"projects"} title={"Projects"} icon={faFolder} editMode={editMode} >
         <div className={`disclosure-content project ${!isDisabled && "edit-input"}`}>
             {isDisabled ? null : <div className="add-button-con">
                 <button onClick={() => { addNewCard() }}><FontAwesomeIcon icon={faPlus} /> Add a New Project</button>

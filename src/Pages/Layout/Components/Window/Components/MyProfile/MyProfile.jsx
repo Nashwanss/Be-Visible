@@ -5,6 +5,9 @@ import Education from './Components/Education/Education';
 import Skills from './Components/Skills/Skills';
 import Badges from './Components/Badges/Badges';
 import Projects from './Components/Projects/Projects';
+import Languages from './Components/Languages/Languages';
+
+import Comments from './Components/Comments/Comments';
 
 
 import './MyProfile.css';
@@ -20,6 +23,8 @@ const MyProfile = () => {
         <Skills />
         <Badges />
         <Projects />
+        <Languages />
+        <Comments />
     </>;
 }
 
