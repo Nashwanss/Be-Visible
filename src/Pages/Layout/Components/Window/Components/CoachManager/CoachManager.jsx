@@ -12,7 +12,7 @@ const CoachManager = () => {
         <div className="coach-manager-header">
             <h3>Diogo Heinen</h3>
             <img
-                src="https://us.123rf.com/450wm/tigatelu/tigatelu1501/tigatelu150100183/35863208-cartoon-coach-giving-a-thumbs-up.jpg?ver=6"
+                src="https://thoughtcatalog.com/wp-content/uploads/2014/05/shutterstock_101032591.jpg"
                 alt="coach-img"
                 className="coach-photo"
             />
