@@ -7,6 +7,8 @@ import UploadButton from '../../../Sections/UploadImages/UploadImages'
 
 
 import './UserInfo.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPersonDigging } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -85,8 +87,8 @@ const UserInfo = () => {
                 </div>
             </div>
             <div className="user-info-right-bottom">
-                <button className={OTWBtnClass} id="otw" onClick={() => handleClick()} >Open to work</button>
-                <button className='btn'> {"< Promotion />"} </button>
+                <button className={OTWBtnClass} id="otw" onClick={() => handleClick()} ><FontAwesomeIcon icon={faPersonDigging} /> Open to work</button>
+                <button className='btn prom'> {"< Promotion />"} </button>
             </div>
         </div>
     </Section>;

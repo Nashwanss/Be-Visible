@@ -99,4 +99,5 @@ footer {
   width: 450px;
   position: absolute;
   z-index: 1000;
+  transition: opacity 0.25s linear;
 }

@@ -1,6 +1,5 @@
 
 import { Disclosure } from '@headlessui/react'
-import Toggle from 'react-styled-toggle';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,7 +16,7 @@ const Section = (props) => {
 
 const ProfDisclosure = (props) => {
     return <Section cname={"disclosure " + props.cname}>
-        <Disclosure>
+        <Disclosure defaultOpen={true}>
             {({ open }) => (
                 <>  <div className="label">
                     <Disclosure.Button className={"button-disclosure"}>

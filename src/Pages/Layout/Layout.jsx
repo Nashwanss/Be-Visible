@@ -1,5 +1,5 @@
 // from React
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // CSS & Assets
 import "./Layout.css";
@@ -23,11 +23,20 @@ const Layout = ({ iAm }) => {
 
 
   const [WindowDisplayed, setWindowDisplayed] = useState(false);
-  const [windowIsOpen, setWindowIsOpen] = useState({ menu: false, filter: false });
+  const [windowIsOpen, setWindowIsOpen] = useState({ menu: false, filter: false, popup: false });
   const [CloseWindow, setCloseWindow] = useState(false);
   const [params, setParams] = useState({ type: "", iAm: iAm, marginLeft: "0px" });
 
-  const [popUpDisplayed, setPopUpDisplayed] = useState(true);
+  const [popUpDisplayed, setPopUpDisplayed] = useState(false);
+
+  useEffect(() => {
+    if (popUpDisplayed) {
+      setWindowIsOpen({ ...windowIsOpen, popup: true });
+    } else {
+      setWindowIsOpen({ ...windowIsOpen, popup: false });
+    }
+  }, [popUpDisplayed])
+
   const [profileData, setProfileData] = useState({});
 
 
@@ -59,6 +68,15 @@ const Layout = ({ iAm }) => {
     }
   }
 
+  const [userResultID, setUserResultID] = useState("");
+
+  const closePopUp = () => {
+    setPopUpDisplayed(false)
+  }
+  const openPopUp = (id) => {
+    setPopUpDisplayed(true)
+    setUserResultID(id)
+  }
 
 
   return (
@@ -74,11 +92,11 @@ const Layout = ({ iAm }) => {
         </nav>
       </header>
       <div className="content" style={contentSize}>
-        <PopUp popUpDisplayed={popUpDisplayed}/>
+        <PopUp popUpDisplayed={popUpDisplayed} closePopUp={closePopUp} userResultID={userResultID} />
         <div className="wrapper">
           <main>
-            <div className="inner-con">
-              <Dashboard setPopUpDisplayed={setPopUpDisplayed} />
+            <div className="inner-con dashboard">
+              <Dashboard openPopUp={openPopUp} />
             </div>
           </main>
           <footer>
