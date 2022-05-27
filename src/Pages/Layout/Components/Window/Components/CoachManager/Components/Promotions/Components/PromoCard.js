@@ -1,4 +1,3 @@
-import "./PromoCard.css";
 
 const PromoCard = (props) => {
   console.log(props);
