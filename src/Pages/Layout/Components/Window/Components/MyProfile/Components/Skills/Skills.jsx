@@ -8,7 +8,7 @@ import './Skills.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Button = ({ icon, name, edit, cname }) => {
-    return (<button className={`btn-skill ${cname}`} >{icon !== null && <img src={icon} className="skill-icon" />} <span> {name}</span> {edit}  </button>);
+    return (<button className={`btn-skill ${cname}`} >{icon !== null && <img src={icon} alt='skill icon' className="skill-icon"  />} <span> {name}</span> {edit}  </button>);
 }
 
 const AddNewSkill = ({ setSkills }) => {

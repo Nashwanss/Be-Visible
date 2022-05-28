@@ -5,7 +5,7 @@ const Card = ({ project }) => {
     return (<div className="card">
         <div className="card-wrap">
             <div className="card-left">
-                <div className="card-left-top"><a href={project.link} target='_blank' rel="project site">
+                <div className="card-left-top"><a href={project.link} target='_blank' rel="noreferrer">
                     <div className="job-image" style={{ backgroundImage: `url(${project.image})` }}>
                     </div>
                 </a>

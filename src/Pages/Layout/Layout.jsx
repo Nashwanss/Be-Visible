@@ -31,13 +31,12 @@ const Layout = ({ iAm }) => {
 
   useEffect(() => {
     if (popUpDisplayed) {
-      setWindowIsOpen({ ...windowIsOpen, popup: true });
+      setWindowIsOpen(windowIsOpen => ({ ...windowIsOpen, popup: true }));
     } else {
-      setWindowIsOpen({ ...windowIsOpen, popup: false });
+      setWindowIsOpen(windowIsOpen => ({ ...windowIsOpen, popup: false }));
     }
   }, [popUpDisplayed])
 
-  const [profileData, setProfileData] = useState({});
 
 
   const [contentSize, setContentSize] = useState({ width: "100%", height: "100%", flexDirection: "row", justifyContent: "center", alignItems: "none" });

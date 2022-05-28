@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect } from "react"
+import { useRef, useEffect } from "react"
 
 
 
 import UploadButton from '../../../../Sections/UploadImages/UploadImages'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faMinus } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -44,7 +44,7 @@ const Card = ({ index, deleteCard, isDisabled, project, setProjects }) => {
         <div className="card-wrap">
             <div className="card-left">
                 <div className="card-left-top">
-                    {isDisabled ? <a href={project.link} target='_blank' rel="project site">
+                    {isDisabled ? <a href={project.link} target='_blank' rel="noreferrer">
                         <div className="job-image" style={{ backgroundImage: `url(${project.image})` }}>
                         </div>
                     </a> : <div className="job-image" style={{ backgroundImage: `url(${project.image})` }}>

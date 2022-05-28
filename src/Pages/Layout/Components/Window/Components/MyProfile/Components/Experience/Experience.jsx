@@ -27,11 +27,6 @@ const Experience = () => {
         }
     }, [isDisabled])
 
-    useEffect(() => {
-        if (sectionExperience.content.length > 0) {
-            console.log(sectionExperience) // this is the sectionExperience object
-        }
-    }, [sectionExperience])
 
 
     const editMode = () => {

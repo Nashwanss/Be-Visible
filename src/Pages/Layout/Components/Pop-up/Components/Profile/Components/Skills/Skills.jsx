@@ -5,7 +5,7 @@ import { faLaptopCode } from '@fortawesome/free-solid-svg-icons'
 
 
 const Button = ({ icon, name, cname }) => {
-    return (<button className={`btn-skill ${cname}`} >{icon !== null && <img src={icon} className="skill-icon" />} <span> {name}</span> </button>);
+    return (<button className={`btn-skill ${cname}`} >{icon !== null && <img src={icon} alt="skill icon" className="skill-icon" />} <span> {name}</span> </button>);
 }
 
 

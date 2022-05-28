@@ -37,7 +37,6 @@ const UserInfo = () => {
             setHasEdited(true)
         } else {
             setIsDisabled(!isDisabled);
-            console.log(userInfo)
             setHasEdited(false)
         }
     }

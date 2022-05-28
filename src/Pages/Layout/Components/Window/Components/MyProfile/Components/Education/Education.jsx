@@ -27,12 +27,6 @@ const Education = () => {
         }
     }, [isDisabled])
 
-    useEffect(() => {
-        if (sectionEducation.content.length > 0) {
-            console.log(sectionEducation) // this is the sectionEducation object
-        }
-    }, [sectionEducation])
-
 
     const editMode = () => {
         if (!hasEdited) {

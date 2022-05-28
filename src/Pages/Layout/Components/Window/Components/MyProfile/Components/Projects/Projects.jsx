@@ -27,11 +27,6 @@ const Projects = () => {
         }
     }, [isDisabled])
 
-    useEffect(() => {
-        if (sectionProject.content.length > 0) {
-            console.log(sectionProject) // this is the sectionProject object
-        }
-    }, [sectionProject])
 
 
     const editMode = () => {
