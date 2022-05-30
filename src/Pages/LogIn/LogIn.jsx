@@ -24,7 +24,9 @@ const LogIn = () => {
                 placeholder="******"
               />
               <button className="form__button form__button--primary">
-                Sign In
+                <span>
+                  Sign In
+                </span>
               </button>
             </form>
             <div className="form-bottom">

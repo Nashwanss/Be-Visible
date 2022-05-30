@@ -1,0 +1,14 @@
+.education {
+  padding: 0%;
+  background-color: transparent;
+}
+.education input {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+.card-middle-top .degree {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: start;
+}

@@ -48,6 +48,7 @@
   width: 20px;
   margin-right: 4px;
 }
+
 .form__button--primary {
   height: 60px;
   border-radius: 40px;
@@ -58,6 +59,30 @@
   cursor: pointer;
   color: white;
   background-color: #3c8891;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-weight: bold;
+}
+.form__button--primary span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.form__button--primary span:after {
+  content: "\2815";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 75px;
+  transition: 0.3s;
+}
+.form__button--primary:hover span {
+  padding-right: 50px;
+}
+.form__button--primary:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .create-account {

@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // CSS & Assets
-import "../../Styles/Layout.css";
+import "./Layout.css";
 import Logo from "../../Assets/LM-Logo.png";
 
 
