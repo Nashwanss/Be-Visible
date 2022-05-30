@@ -5,12 +5,9 @@ import Toggle from 'react-styled-toggle';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
+import { faAngleRight} from '@fortawesome/free-solid-svg-icons';
 
-import { faAngleRight, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-
-import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 const Section = (props) => {
     return (
