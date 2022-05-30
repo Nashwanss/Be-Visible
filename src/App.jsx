@@ -10,35 +10,25 @@ import CoachManager from "./Pages/Layout/Components/Window/Components/CoachManag
 import Login from "./Pages/LogIn/LogIn";
 import Register from "./Pages/Register/Register";
 
-const lightTheme = {
-  background: "#f5f5f5",
-  text: "red",
-};
-const darkTheme = {
-  background: "gray",
-  text: "white",
-};
+// const lightTheme = {
+//   background: "#f5f5f5",
+//   text: "red",
+// };
+// const darkTheme = {
+//   background: "gray",
+//   text: "white",
+// };
 
-const themes = {
-  light: lightTheme,
-  dark: darkTheme,
-};
+// const themes = {
+//   light: lightTheme,
+//   dark: darkTheme,
+// };
 
 const App = () => {
-  const [theme, setTheme] = useState("dark");
-
-  // useEffect(() =>{
-
-  // }, [theme])
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          index
-          element={<Login them={theme} setTheme={setTheme} />}
-        />
+        <Route path="/" index element={<Login />} />
         <Route path="register" index element={<Register />} />
         <Route path="dashboard" element={<Layout iAm="coach" />}>
           <Route path="filter" element={<Filter />} />
