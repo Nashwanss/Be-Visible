@@ -8,8 +8,6 @@ import Card from './Components/Card';
 import LearnerData from './LearnerData';
 
 
-
-
 const Dashboard = ({ openPopUp }) => {
 
     const learners = LearnerData.map((learner) => {

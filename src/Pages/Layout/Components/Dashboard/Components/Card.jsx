@@ -1,7 +1,7 @@
 import '../Dashboard.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPersonDigging } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 
 const Card = ({ user, openPopUp }) => {
 
@@ -13,7 +13,7 @@ const Card = ({ user, openPopUp }) => {
                     backgroundSize: 'cover',
                 }}>
 
-                    <div className={user.otw ? 'btn dash' : 'btn dash btn-var'}><span> <FontAwesomeIcon icon={faPersonDigging} /> Open to work</span></div>
+                    <div className={user.otw ? 'btn dash' : 'btn dash btn-var'}><span> <FontAwesomeIcon icon={faCheckCircle} /> Open to work</span></div>
                 </div>
                 <div className="dashboard-card-info">
                     <h6>{user.name}</h6>

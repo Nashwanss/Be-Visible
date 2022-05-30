@@ -69,9 +69,10 @@ const Window = ({ CloseWindow, params, handleWindow, contentSize }) => {
                 </div>
             </div>
             <div className="window-content">
-                <div className="inner-con">
+                <div className={`inner-con ${params.type === "filter" && "filter-con"}`}>
                     <Outlet />
                 </div>
+                {params.type === "filter" && <div className='apply-button-con' ><button className='btn' >Apply</button> </div>}
             </div>
         </div>
     )
