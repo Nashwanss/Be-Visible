@@ -11,7 +11,7 @@ const LogIn = () => {
         <div className="login-container">
           <div className="form-container">
             <img src={logo} alt="logo" className="login-logo" />
-            <div className="form-title">Login</div>
+            <div className="form-title">Sign in</div>
             <form className="form" action="dashboard">
               <input
                 type="email"
