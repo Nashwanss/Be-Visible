@@ -1,3 +1,12 @@
-.disclosure-content .skills {
+.disclosure-content.skills {
 text-decoration: dashed;
+}
+
+.frontend-filter, .backend-filter, .ai-filter, .cyber-filter  {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    font-size: 20px;
+    gap: 5px;
+    margin: 15px 0px 15px 0px;
 }

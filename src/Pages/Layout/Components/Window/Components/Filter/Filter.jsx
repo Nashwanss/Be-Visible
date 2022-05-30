@@ -9,7 +9,6 @@ const Filter = () => {
   <Skills />
   <Promotions /> 
   <Availability /> 
-  <button className='btn'>Apply</button>
   </>
 }
  
