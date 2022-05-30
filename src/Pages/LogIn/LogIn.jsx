@@ -1,15 +1,30 @@
+// import { ThemeContext, themes } from "./ThemeContext";
 import logo from "../../Assets/LM-Logo.png";
 import background from "../../Assets/background.jpeg";
+// import Johnson from "../../Assets/Johnson7 team.jpg";
+import { HiMoon } from "react-icons/hi";
+import { HiSun } from "react-icons/hi";
 import "./Login.css";
 
-const LogIn = () => {
+const LogIn = ({ theme, setTheme }) => {
+  const changeThemeHandler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+  console.log(theme);
   return (
     <>
       <div
         className="container"
-        style={{ backgroundImage: `url(${background})` }} >
+        style={{ backgroundImage: `url(${background})` }}
+      >
         <div className="login-container">
-          <button className='toggle'>Dark</button>
+          <button className="toggle" onClick={changeThemeHandler}>
+            {theme === "light" ? (
+              <HiSun size={40} color="#fdd40a" />
+            ) : (
+              <HiMoon size={30} color="darkslateblue" />
+            )}
+          </button>
           <div className="form-container">
             <img src={logo} alt="logo" className="login-logo" />
             <div className="form-title">Sign in</div>
@@ -25,16 +40,14 @@ const LogIn = () => {
                 placeholder="******"
               />
               <button className="form__button form__button--primary">
-                <span>
-                  Sign In
-                </span>
+                <span>Sign In</span>
               </button>
             </form>
             <div className="form-bottom">
               <input className="login-check-box" type="checkbox" /> Remember me
             </div>
             <div className="create-account">
-            Do not have an account?<a href="/Register"> Sign up</a> 
+              Do not have an account?<a href="/Register"> Sign up</a>
             </div>
           </div>
         </div>
