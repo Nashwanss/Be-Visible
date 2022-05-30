@@ -1,41 +1,59 @@
-import { ProfDisclosure } from "../../../Sections/Sections";
-import { faBuilding } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
-import "./Companies.css";
-import CompaniesData from "./CompaniesData";
-import ComCard from "./Components/ComCard";
+import { ProfDisclosure } from "../../../Sections/Sections";
+
+import './Companies.css';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBuilding, faXmark } from "@fortawesome/free-solid-svg-icons";
+
+const CompanyButton = ({ id, name, isDisabled, deleteCompanyAccount }) => {
+    return (<button id={id} className="btn"> {name} {!isDisabled && <FontAwesomeIcon icon={faXmark} onClick={() => deleteCompanyAccount(id)} />} </button>);
+}
 
 const Companies = () => {
-  const company = CompaniesData.map((company) => {
-    return <ComCard key={company.id} logo={company.logo} name={company.name} />;
-  });
 
-  return (
-    <ProfDisclosure calssName="Companies" title="Companies" icon={faBuilding}>
-      <div className="Companies-container">
-        <div className="companies-body">{company}</div>
-        <div className="companies-creation-container">
-          <form className="company-creation-form" action="creation">
-            <input
-              type="text"
-              className="company-creation-input"
-              placeholder="Carrfour"            />
-            <input
-              type="password"
-              className="company-creation-input"
-              placeholder="******"
-            />
-            <div className="company-creation-btn-container">
-            <button className="company-creation-btn">
-              Create
-            </button>
+    const [isDisabled, setIsDisabled] = useState(true);
+    const [hasEdited, setHasEdited] = useState(false);
+
+    const [companies, setCompanies] = useState([{ id: "1", name: "Entel" }, { id: "2", name: "Telefonica" }, { id: "3", name: "Bayer" }, { id: "4", name: "BHP" }, { id: "5", name: "BeCode" }]);
+
+    const editMode = () => {
+        if (!hasEdited) {
+            setIsDisabled(!isDisabled);
+            setHasEdited(true)
+        } else {
+            setIsDisabled(!isDisabled);
+            // here we need to send the data to the server
+            setHasEdited(false)
+        }
+    }
+
+    const deleteCompanyAccount = (id) => {
+        const newCompanies = companies.filter(company => company.id !== id)
+        setCompanies(newCompanies)
+    }
+
+    return (<ProfDisclosure cname={"companies"} title={"Companies"} icon={faBuilding} editMode={editMode} >
+        <div className="disclosure-content companies">
+            <div className="companies-display">
+                <div className="inner-company-display">
+                    {companies.map((company, i) => {
+                        return <CompanyButton key={i} id={company.id} name={company.name} isDisabled={isDisabled} deleteCompanyAccount={deleteCompanyAccount} />
+                    })}
+                </div>
             </div>
+            {!isDisabled && <div className="create-company-con">
+                <form action="">
+                    <input type="text" name="company" placeholder="Company Name" />
+                    <input type="password" name="password" />
+                    <button type="submit" className="btn">Create</button>
 
-          </form>
+                </form>
+            </div>}
+
         </div>
-      </div>
-    </ProfDisclosure>
-  );
-};
+    </ProfDisclosure>);
+}
 
 export default Companies;
