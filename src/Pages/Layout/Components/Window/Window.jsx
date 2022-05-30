@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import './Window.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import ContactCard from './Components/ContactCard/ContactCard';
 
 
 const Window = ({ CloseWindow, params, handleWindow, contentSize }) => {
@@ -44,9 +45,11 @@ const Window = ({ CloseWindow, params, handleWindow, contentSize }) => {
 
     }
 
+    const [isContactCardDisplayed, setisContactCardDisplayed] = useState(false)
+
     const whichIcon = () => {
         if (params.type === "menu" && params.iAm === "learner") {
-            return <FontAwesomeIcon icon={faAddressCard} />
+            return <FontAwesomeIcon icon={faAddressCard} onClick={() => setisContactCardDisplayed(true)} />
         } else if (params.type === "filter") {
             return <button className='btn'>Reset</button>
         } else {
@@ -56,6 +59,8 @@ const Window = ({ CloseWindow, params, handleWindow, contentSize }) => {
 
     return (
         <div className="window" style={{ transform: `translate${xOrY}(${translate})`, transition: "transform 0.8s", marginLeft: marginLeft }}>
+
+            <ContactCard isContactCardDisplayed={isContactCardDisplayed} setisContactCardDisplayed={setisContactCardDisplayed}/>
             <div className="window-header">
                 <div className="inner-con">
                     <div className="window-header-edge left">{whichIcon()}</div>
