@@ -24,7 +24,7 @@ const Window = ({ CloseWindow, params, handleWindow, contentSize }) => {
             setXorY("X")
             setTranslate("-450px");
             if (params.iAm === "learner") {
-                setTitle("Profile")
+                setTitle("My Profile")
             } else {
                 setTitle("Coach Manager")
             }

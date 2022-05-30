@@ -10,11 +10,10 @@ import Languages from './Components/Languages/Languages';
 import Comments from './Components/Comments/Comments';
 
 
-import './MyProfile.css';
 
 
 
-const MyProfile = () => {
+const Profile = () => {
     return <>
         <UserInfo />
         <About />
@@ -28,6 +27,4 @@ const MyProfile = () => {
     </>;
 }
 
-export default MyProfile;
-
-
+export default Profile;

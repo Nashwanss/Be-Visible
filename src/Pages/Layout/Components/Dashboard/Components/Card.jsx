@@ -1,37 +1,25 @@
 import '../Dashboard.css';
 
-const Card = (props) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPersonDigging } from '@fortawesome/free-solid-svg-icons';
 
-    // console.log(props)
-
-    let badge;
-
-    if (props.status === 'active') {
-        badge = "Open to work" }
-    else {
-        badge = "Not available" }
-
-    const ProfileAccessHandler = () => {
-        console.log('test')
-    
-        
-    }
+const Card = ({ user, openPopUp }) => {
 
     return (
         <>
-            <div onClick={ProfileAccessHandler} className="dashboard-card">
+            <div onClick={() => { openPopUp(user.name) }} className="dashboard-card">
                 <div className="user-pic" style={{
-                    backgroundImage : `url(${props.photo})`,
-                    backgroundSize : 'cover',
+                    backgroundImage: `url(${user.image})`,
+                    backgroundSize: 'cover',
                 }}>
-                    
-            {badge && <div className="badge-active">{badge}</div>}
+
+                    <div className={user.otw ? 'btn dash' : 'btn dash btn-var'}><span> <FontAwesomeIcon icon={faPersonDigging} /> Open to work</span></div>
                 </div>
                 <div className="dashboard-card-info">
-                    <h6>{props.name}</h6>
-                    <h6>{props.position}</h6>
+                    <h6>{user.name}</h6>
+                    <h6>{user.position}</h6>
                 </div>
-            </div>  
+            </div>
 
         </>
     );

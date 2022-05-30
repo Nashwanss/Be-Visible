@@ -27,11 +27,6 @@ const Experience = () => {
         }
     }, [isDisabled])
 
-    useEffect(() => {
-        if (sectionExperience.content.length > 0) {
-            console.log(sectionExperience) // this is the sectionExperience object
-        }
-    }, [sectionExperience])
 
 
     const editMode = () => {
@@ -54,7 +49,7 @@ const Experience = () => {
     return <ProfDisclosure cname={"experience"} title={"Experience"} icon={faBriefcase} editMode={editMode} >
         <div className={`disclosure-content experience ${!isDisabled && "edit-input"}`}>
             {isDisabled ? null : <div className="add-button-con">
-                <button onClick={() => { addNewCard() }}><FontAwesomeIcon icon={faPlus} /> Add New Experience</button>
+                <button onClick={() => { addNewCard() }}><FontAwesomeIcon icon={faPlus} /> Add a New Experience</button>
             </div>}
             {experiences.map((experience, i) => {
                 return <Card key={i} index={i} deleteCard={deleteCard} isDisabled={isDisabled} experience={experience} setExperiences={setExperiences} />

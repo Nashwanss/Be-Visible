@@ -94,3 +94,6 @@
 .edit:hover {
   transform: translate(0px, -1px);
 }
+.prom {
+  background-color: rgb(36, 36, 36);
+}

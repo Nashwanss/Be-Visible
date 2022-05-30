@@ -27,7 +27,7 @@ const About = () => {
             setHasEdited(true)
         } else {
             setIsDisabled(!isDisabled);
-            console.log(about)
+            // here we send to the backend the new value
             setHasEdited(false)
         }
     }

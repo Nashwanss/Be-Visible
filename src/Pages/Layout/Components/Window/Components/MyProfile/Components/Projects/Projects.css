@@ -1,0 +1,55 @@
+.projects {
+  padding: 0%;
+  background-color: transparent;
+}
+.projects input {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+.description textarea {
+  margin-top: 10px;
+  min-height: 62px;
+  text-align: start;
+  padding: 5px;
+}
+.card-middle-top .name {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 5px;
+  color: rgb(27, 27, 27);
+  text-align: start;
+}
+.project .card {
+  flex-direction: column;
+}
+.card-left-top a {
+  display: flex;
+}
+.card-wrap {
+  display: flex;
+}
+.card-link-input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  width: 100%;
+  height: 100%;
+}
+.card-link-input input {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  height: 20px;
+  width: 100%;
+  outline: 1px solid black;
+}
+.card-middle-top a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  width: 100%;
+  height: 100%;
+}

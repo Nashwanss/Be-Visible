@@ -1,0 +1,13 @@
+.badge {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.badges-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

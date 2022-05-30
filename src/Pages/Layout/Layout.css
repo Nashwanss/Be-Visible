@@ -72,7 +72,6 @@ footer {
   width: 100%;
 }
 
-
 .btn {
   height: 50px;
   width: 130px;
@@ -95,4 +94,11 @@ footer {
 
 .mg-r-5 {
   margin-right: 5px;
+}
+.pop-up {
+  height: 88vh;
+  width: 450px;
+  position: absolute;
+  z-index: 1000;
+  transition: opacity 0.25s linear;
 }

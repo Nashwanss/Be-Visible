@@ -1,0 +1,23 @@
+.card.comment {
+  flex-direction: column;
+}
+
+.card-comment-top {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-comment-top p {
+  font-size: 0.7em;
+  font-style: italic;
+  color: #828282;
+  margin: 0;
+}
+.card-comment-top svg {
+  margin-right: 5px;
+}
+.card-comment-bottom {
+  margin-top: 10px;
+  font-size: 0.8em;
+}

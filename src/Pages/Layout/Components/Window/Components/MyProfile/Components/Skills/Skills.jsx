@@ -8,13 +8,24 @@ import './Skills.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Button = ({ icon, name, edit, cname }) => {
-    return (<button className={`btn-skill ${cname}`} >{icon !== null && <img src={icon} className="skill-icon" />} <span> {name}</span> {edit}  </button>);
+    return (<button className={`btn-skill ${cname}`} >{icon !== null && <img src={icon} alt='skill icon' className="skill-icon"  />} <span> {name}</span> {edit}  </button>);
 }
 
-const AddNewSkill = () => {
-    const [skillOptions, setSkillOptions] = useState([{ name: "html", icon: faHTML }, { name: "css", icon: faHTML }])
+const AddNewSkill = ({ setSkills }) => {
+    const [skillOptions] = useState([{ name: "html", icon: faHTML }])
     const skillsSelect = useRef(null)
-    return (<><label className='skills-label' htmlFor="skills"><select id="skills" ref={skillsSelect} name="skills">
+
+    const addSkill = () => {
+        if (skillsSelect.current.value === "add-new") {
+            return
+        } else {
+            setSkills(prevSkills => {
+                return [...prevSkills, { name: skillsSelect.current.value, icon: skillOptions.find(skill => skill.name === skillsSelect.current.value).icon }]
+            })
+        }
+    }
+
+    return (<><label className='skills-label' htmlFor="skills"><select id="skills" ref={skillsSelect} name="skills" onChange={() => addSkill()}>
         <option value={'add-new'}> Add new</option>
         {skillOptions.map((skill, i) => {
             return <option key={i} value={skill.name}>{skill.name.toUpperCase()}</option>
@@ -28,7 +39,7 @@ const Skills = () => {
 
     const [isDisabled, setIsDisabled] = useState(true)
     const [hasEdited, setHasEdited] = useState(false);
-    const [skills, setSkills] = useState([{ name: "html", icon: faHTML }])
+    const [skills, setSkills] = useState([])
     const editMode = () => {
         if (!hasEdited) {
             setIsDisabled(!isDisabled);
@@ -38,10 +49,15 @@ const Skills = () => {
             setHasEdited(false)
         }
     }
+    const removeSkill = (index) => {
+        setSkills(prevSkills => {
+            return prevSkills.filter((skill, i) => i !== index)
+        })
+    }
     return (<ProfDisclosure cname="skills" title="Skills" icon={faLaptopCode} editMode={editMode}> <div className={`disclosure-content skills `}>
         <div className="skills-container">
-            {!isDisabled && <AddNewSkill />} {skills.map((skill, i) => {
-                return <Button key={i} icon={skill.icon} name={skill.name} edit={<FontAwesomeIcon icon={faXmark} />} cname={`skill-${i}`} />
+            {!isDisabled && <AddNewSkill setSkills={setSkills} />} {skills.length === 0 && isDisabled && <p>You haven't added any skills yet.</p>}{skills.map((skill, i) => {
+                return <Button key={i} icon={skill.icon} name={skill.name} edit={!isDisabled && <FontAwesomeIcon icon={faXmark} onClick={() => { removeSkill(i) }} />} cname={`skill-${i}`} />
             })}
         </div>
     </div> </ProfDisclosure>);

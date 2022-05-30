@@ -1,4 +1,4 @@
-.btn-skill {
+.btn-language {
   border: none;
   background-color: #3c8891;
   border-radius: var(--main-border-radius);
@@ -12,19 +12,15 @@
   margin-right: 10px;
   margin-bottom: 10px;
 }
-.btn-skill span {
-  margin-left: 5px;
-}
-.btn-skill svg {
+.btn-language svg {
   margin-left: 5px;
   cursor: pointer;
 }
-
-.skill-icon {
+.language-icon {
   width: 20px;
   height: 20px;
 }
-.skills-label {
+.languages-label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +28,7 @@
   margin-right: 10px;
   margin-bottom: 10px;
 }
-.skills-label select {
+.languages-label select {
   position: relative;
   height: 100%;
   width: 100%;
@@ -41,11 +37,11 @@
   padding: 10px;
   cursor: pointer;
 }
-.skills-label select option {
+.languages-label select option {
   background-color: white;
   color: black;
 }
-.skills-container {
+.languages-container {
   display: flex;
   flex-wrap: wrap;
 }
