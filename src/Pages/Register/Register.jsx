@@ -1,8 +1,6 @@
 import logo from "../../Assets/LM-Logo.png";
 import background from "../../Assets/background.jpeg";
 
-import "../../Pages/LogIn/Login.css";
-
 const Register = () => {
   return (
     <>
