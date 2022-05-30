@@ -38,10 +38,12 @@
 
 .arrow {
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
-.rotate-180 {
-  transform: rotate(180deg);
+.rotate-90 {
+  transform: rotate(90deg);
 }
+
 
 .edit-input input {
   border: 1px solid #000000;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "./Location.css";
-import { ProfDisclosure } from "../../../Sections/Sections";
+import { FilterDisclosure } from "../../../Sections/Sections";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const Button = ({ location, on, setLocations }) => {
@@ -32,7 +32,7 @@ const Location = () => {
     { location: "Worldwide", on: false },
   ]);
   return (
-    <ProfDisclosure cname={"location"} icon={faLocationDot} title={"Location"}>
+    <FilterDisclosure cname={"location"} icon={faLocationDot} title={"Location"}>
       <div className="disclosure-content location">
         {locations.map((item, index) => {
           return (
@@ -45,7 +45,7 @@ const Location = () => {
           );
         })}
       </div>
-    </ProfDisclosure>
+    </FilterDisclosure>
   );
 };
 
