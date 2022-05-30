@@ -9,6 +9,7 @@ const LogIn = () => {
         className="container"
         style={{ backgroundImage: `url(${background})` }} >
         <div className="login-container">
+          <button className='toggle'>Dark</button>
           <div className="form-container">
             <img src={logo} alt="logo" className="login-logo" />
             <div className="form-title">Sign in</div>
