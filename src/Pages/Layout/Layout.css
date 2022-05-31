@@ -84,7 +84,6 @@ footer {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
 }
 .btn-var {
   color: rgb(143, 143, 143);
@@ -103,12 +102,12 @@ footer {
   transition: opacity 0.25s linear;
 }
 
-
 .logout-btn {
   background-color: transparent;
   border: none;
   font-size: 0.8em;
   cursor: pointer;
+}
 
 /* dark-light classes */
 .light-primary-color {
@@ -167,5 +166,4 @@ footer {
 }
 .font-transition {
   transition: color 1000ms ease-in-out;
-
 }
