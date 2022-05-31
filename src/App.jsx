@@ -34,7 +34,7 @@ export const UserSession = createContext();
 
 const App = () => {
 
-  const [userData, setUserData] = useState({ id: "", username: "", email: "", role: "", token: "", isLoggedIn: true });
+  const [userData, setUserData] = useState({ id: "", username: "", email: "", role: "learner", token: "", isLoggedIn: true });
 
   const getJWTfromLocalStorage = async () => {
     try {

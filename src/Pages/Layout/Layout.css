@@ -102,3 +102,10 @@ footer {
   z-index: 1000;
   transition: opacity 0.25s linear;
 }
+
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 0.8em;
+  cursor: pointer;
+}

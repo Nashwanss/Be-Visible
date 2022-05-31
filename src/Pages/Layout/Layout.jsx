@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 // CSS & Assets
 import "./Layout.css";
 import Logo from "../../Assets/LM-Logo.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 // Components
 import Window from "./Components/Window/Window";
@@ -83,10 +84,17 @@ const Layout = ({ iAm }) => {
       <header>
         <nav>
           <div className="inner-con">
+            <div className="logo-layout">
             <a href="/" className="logo-con">
               <img src={Logo} alt="Logo" />
             </a>
+            </div>
+            <div className="logout-btn">
+            <button className="logout-btn"><FontAwesomeIcon  icon={faArrowRightFromBracket}/></button>
+            </div>
+            <div className="top-right-btn">
             <TopRightButton setParams={setParams} iAm={iAm} contentSize={contentSize} handleWindow={handleWindow} windowIsOpen={windowIsOpen} WindowDisplayed={WindowDisplayed} />
+            </div>
           </div>
         </nav>
       </header>
