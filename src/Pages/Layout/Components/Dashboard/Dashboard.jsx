@@ -8,7 +8,7 @@ import Card from './Components/Card';
 import LearnerData from './LearnerData';
 
 
-const Dashboard = ({ openPopUp }) => {
+const Dashboard = ({ openPopUp , themeColors}) => {
 
     const learners = LearnerData.map((learner) => {
         return (
@@ -16,6 +16,7 @@ const Dashboard = ({ openPopUp }) => {
                 key={learner.id}
                 user={learner}
                 openPopUp={openPopUp}
+                themeColors={themeColors}
             />
         )
     })
@@ -33,7 +34,7 @@ const Dashboard = ({ openPopUp }) => {
     return (
         <>
             <div className="search-bar-container">
-                <input type="text" className="search-bar" placeholder="&#xF002; Search" style={{ fontFamily: 'FontAwesome, Oxygen', fontStyle: 'normal', fontSize: '16px', letterSpacing: '2px', width: searchWidth }} onFocus={changeWidth} onBlur={changeWidth} />
+                <input type="text" className={"search-bar" + " " + themeColors.colorTertiary + " "  + themeColors.textTertiaryColor} placeholder="&#xF002; Search" style={{ fontFamily: 'FontAwesome, Oxygen', fontStyle: 'normal', fontSize: '16px', letterSpacing: '2px', width: searchWidth }} onFocus={changeWidth} onBlur={changeWidth} />
             </div>
             <section className="cards-container">
                 {learners}

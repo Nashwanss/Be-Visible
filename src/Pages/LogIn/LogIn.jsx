@@ -73,7 +73,7 @@ const LogIn = () => {
         <div className="login-container">
           <button className="toggle" onClick={changeThemeHandler}>
             {theme === "light" ? (
-              <HiSun size={40} color="#fdd40a" />
+              <HiSun size={40} color="#8276cb" />
             ) : (
               <HiMoon size={30} color="darkslateblue" />
             )}

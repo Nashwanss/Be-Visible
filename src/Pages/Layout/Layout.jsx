@@ -3,10 +3,10 @@ import { useEffect, useState, createContext } from "react";
 
 // CSS & Assets
 import "./Layout.css";
-import Logo from "../../Assets/LM-Logo.png";
+import LM_Logo from "../../Assets/LM-Logo.png";
+import DM_Logo from "../../Assets/DM-Logo.png";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
 
 import cssClasses from "./cssClasses.json";
 
@@ -24,7 +24,7 @@ const Layout = ({ iAm }) => {
   const light = cssClasses.light;
   const dark = cssClasses.dark;
 
-  const [themeMode, setThemeMode] = useState(false);
+  const [themeMode, setThemeMode] = useState(true);
   const [themeColors, setThemeColors] = useState({ ...dark });
 
   const switchMode = () => {
@@ -100,18 +100,22 @@ const Layout = ({ iAm }) => {
     setUserResultID(id);
   };
 
+
+    
+
   return (
 
     <ThemeContext.Provider value={{ themeColors }}>
-      <div className="layout">
+      <div className={"layout"+" " + themeColors.colorPrimary}>
         <header>
           <nav>
             <div className="inner-con">
               <a href="/" className="logo-con">
-                <img src={Logo} alt="Logo" />
+              {themeMode === false ? (<img src={LM_Logo} alt="LM Logo" />) : (<img src={DM_Logo} alt="DM Logo" />)}
               </a>
               <Switch switchMode={switchMode} themeMode={themeMode} />
               <TopRightButton
+                themeColors={themeColors}
                 setParams={setParams}
                 iAm={iAm}
                 contentSize={contentSize}
@@ -131,12 +135,15 @@ const Layout = ({ iAm }) => {
           <div className="wrapper">
             <main>
               <div className="inner-con dashboard">
-                <Dashboard openPopUp={openPopUp} />
+                <Dashboard 
+                openPopUp={openPopUp}
+                themeColors={themeColors} />
               </div>
             </main>
             <footer>
               <div className="inner-con footer">
                 <FilterButton
+                  themeColors={themeColors}
                   setParams={setParams}
                   contentSize={contentSize}
                   handleWindow={handleWindow}

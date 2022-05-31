@@ -15,8 +15,8 @@ const Switch = ({ switchMode, themeMode }) => {
     >
     {console.log(themeMode)}
 
-    {themeMode === false ? (
-        <HiSun size={50} color="#fdd40a" />
+    {themeMode === true ? (
+        <HiSun size={50} color="#8276cb" />
     ) : (
         <HiMoon size={40} color="darkslateblue" />
     )}
