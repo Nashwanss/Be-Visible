@@ -13,7 +13,6 @@ import background from "../../Assets/background.jpeg";
 import { HiMoon } from "react-icons/hi";
 import { HiSun } from "react-icons/hi";
 import "./Login.css";
-import { useState } from "react";
 
 const LogIn = () => {
 
