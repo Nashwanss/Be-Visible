@@ -4,12 +4,15 @@ import Toggle from 'react-styled-toggle';
 
 import './ContactCard.css'
 import logo from '../../../../../../Assets/LM-Logo.png'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { UserSession } from '../../../../../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsappSquare, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faFileInvoice, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const Section = ({ name, isDisabled, link, icon, value, setValue }) => {
+
+
     const [fontSize, setFontSize] = useState("1em")
 
     const [inputValue, setInputValue] = useState("")
@@ -71,9 +74,14 @@ const SocialMedia = ({ contactCardInfo, setContactCardInfo, isDisabled }) => {
 
 
 const ContactCard = ({ isContactCardDisplayed, setisContactCardDisplayed }) => {
-    const [contactCardInfo, setContactCardInfo] = useState({ whatsapp: "32000000000", email: "email@gmail.com", github: "username", linkedin: "username", cv: "linktocv" })
+
+    const userDataContext = useContext(UserSession);
+    const { userData } = userDataContext;
+    const [contactCardInfo, setContactCardInfo] = useState({ whatsapp: "32000000000", email: userData.email, github: "username", linkedin: "username", cv: "linktocv" })
     const [isDisabled, setIsDisabled] = useState(true)
     const [hasEdited, setHasEdited] = useState(false);
+
+
 
     const editMode = () => {
         if (!hasEdited) {

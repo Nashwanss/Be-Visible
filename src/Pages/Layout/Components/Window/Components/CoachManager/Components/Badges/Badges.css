@@ -1,0 +1,52 @@
+.badge-con {
+  display: flex;
+  margin: 10px;
+}
+.badge-pic {
+  height: 50px;
+  width: 50px;
+  background-color: #3c8891;
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.badge-pic svg {
+  transform: translate(7px, -7px);
+  cursor: pointer;
+}
+.add-badge-con {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.add-badge-con form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.add-badge-con form input {
+  margin-bottom: 10px;
+  width: 50%;
+  height: 40px;
+  border: none;
+  background-color: #dee2e6;
+  border-radius: var(--main-border-radius);
+  text-align: center;
+}
+.upload-badge-image {
+  height: 70px;
+  width: 70px;
+  background-color: #3c8891;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
