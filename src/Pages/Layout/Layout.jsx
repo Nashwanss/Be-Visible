@@ -5,6 +5,8 @@ import { useEffect, useState, createContext, useContext } from "react";
 import "./Layout.css";
 import LM_Logo from "../../Assets/LM-Logo.png";
 import DM_Logo from "../../Assets/DM-Logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 
 
