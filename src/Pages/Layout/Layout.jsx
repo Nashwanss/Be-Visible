@@ -1,5 +1,5 @@
 // from React
-import { useEffect, useState, createContext } from "react";
+import { useEffect, useState, createContext, useContext } from "react";
 
 // CSS & Assets
 import "./Layout.css";
@@ -17,6 +17,9 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import PopUp from "./Components/Pop-up/Pop-up";
 import { TopRightButton, FilterButton } from "./Components/Buttons/Buttons";
 import Switch from "./Components/Switch/Switch";
+
+
+import { UserSession } from "../../App";
 
 export const ThemeContext = createContext();
 
@@ -102,6 +105,11 @@ const Layout = ({ iAm }) => {
 
 
     
+  const userDataContext = useContext(UserSession);
+
+  const handleLogOut = () => {
+    userDataContext.setUserData({...userDataContext.userData, id: "", username: "", email: "", role: "learner", token: "", isLoggedIn: false });
+  }
 
   return (
 
@@ -110,10 +118,17 @@ const Layout = ({ iAm }) => {
         <header>
           <nav>
             <div className="inner-con">
+              <div className="logo-layout">
               <a href="/" className="logo-con">
               {themeMode === false ? (<img src={LM_Logo} alt="LM Logo" />) : (<img src={DM_Logo} alt="DM Logo" />)}
               </a>
+              </div>
+              <div className="buttons-con">
               <Switch switchMode={switchMode} themeMode={themeMode} />
+              <button className="logout-btn " onClick={() => handleLogOut() }>
+                 <FontAwesomeIcon icon={faArrowRightFromBracket} /> 
+              </button>
+              </div>
               <TopRightButton
                 themeColors={themeColors}
                 setParams={setParams}
