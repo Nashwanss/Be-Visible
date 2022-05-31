@@ -33,29 +33,29 @@ const LogIn = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // axios
-    //   .post("https://bevisible-1.herokuapp.com/api/auth/signin", inputValues)
-    //   .then((res) => {
-    //     let role
-    //     if (res.data.roles[0] === "ROLE_LEARNER") {
-    //       role = "learner"
-    //     } else if (res.data.roles[0] === "ROLE_COACH") {
-    //       role = "coach"
-    //     } else if (res.data.roles[0] === "ROLE_COMPANY") {
-    //       role = "company"
-    //     }
-    //     userDataContext.setUserData(prevUserData => {
-    //       return { ...prevUserData, id: res.data.id, username: res.data.username, email: res.data.email, role: role, token: res.data.token, isLoggedIn: true };
-    //     })
-    //     if (isChecked) {
-    //       localStorage.setItem("token", JSON.stringify({ id: res.data.id, username: res.data.username, email: res.data.email, role: role, token: res.data.token })); // we store the token in local storage
-    //     }
-    //   }
-    //   )
-    //   .catch((err) => {
-    //     console.log(err);
-    //   }
-    //   );
+    axios
+      .post("https://bevisible-1.herokuapp.com/api/auth/signin", inputValues)
+      .then((res) => {
+        let role
+        if (res.data.roles[0] === "ROLE_LEARNER") {
+          role = "learner"
+        } else if (res.data.roles[0] === "ROLE_COACH") {
+          role = "coach"
+        } else if (res.data.roles[0] === "ROLE_COMPANY") {
+          role = "company"
+        }
+        userDataContext.setUserData(prevUserData => {
+          return { ...prevUserData, id: res.data.id, username: res.data.username, email: res.data.email, role: role, token: res.data.token, isLoggedIn: true };
+        })
+        if (isChecked) {
+          localStorage.setItem("token", JSON.stringify({ id: res.data.id, username: res.data.username, email: res.data.email, role: role, token: res.data.token })); // we store the token in local storage
+        }
+      }
+      )
+      .catch((err) => {
+        console.log(err);
+      }
+      );
 
   }
 
