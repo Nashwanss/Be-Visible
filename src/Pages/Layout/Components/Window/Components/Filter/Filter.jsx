@@ -11,5 +11,5 @@ const Filter = () => {
   <Availability /> 
   </>
 }
- 
+
 export default Filter;

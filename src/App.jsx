@@ -18,24 +18,10 @@ import Register from "./Pages/Register/Register";
 export const UserSession = createContext();
 
 
-// const lightTheme = {
-//   background: "#f5f5f5",
-//   text: "red",
-// };
-// const darkTheme = {
-//   background: "gray",
-//   text: "white",
-// };
-
-
-// const themes = {
-//   light: lightTheme,
-//   dark: darkTheme,
-// };
 
 const App = () => {
 
-  const [userData, setUserData] = useState({ id: "", username: "", email: "", role: "learner", token: "", isLoggedIn: true });
+  const [userData, setUserData] = useState({ id: "", username: "", email: "", role: "coach", token: "", isLoggedIn: true });
 
   const getJWTfromLocalStorage = async () => {
     try {

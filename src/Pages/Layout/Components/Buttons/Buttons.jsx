@@ -12,12 +12,12 @@ import { faWrench, faSliders } from "@fortawesome/free-solid-svg-icons";
 
 // components
 
-const TopRightButton = ({ setParams, iAm, contentSize, handleWindow, windowIsOpen, WindowDisplayed }) => {
+const TopRightButton = ({ setParams, iAm, contentSize, handleWindow, windowIsOpen, WindowDisplayed , themeColors}) => {
 
     const displayWhat = () => { // To know what to display as button
         let whatToDisplay;
         if (iAm === "learner") {
-            whatToDisplay = <Link to="./myprofile"><div className="profile-button" onClick={() => handleClick()}></div></Link>
+            whatToDisplay = <Link to="./myprofile"><div className={"profile-button" + " " + themeColors.colorSecondary} onClick={() => handleClick()}></div></Link>
         } else if (iAm === "coach") {
             whatToDisplay = <Link to="./coachmanager"><FontAwesomeIcon icon={faWrench} onClick={() => handleClick()} /></Link>
         }
@@ -39,13 +39,13 @@ const TopRightButton = ({ setParams, iAm, contentSize, handleWindow, windowIsOpe
     )
 }
 
-const FilterButton = ({ setParams, contentSize, handleWindow }) => {
+const FilterButton = ({ setParams, contentSize, handleWindow , themeColors}) => {
     const handleClick = () => {
         setParams(prevParams => ({ ...prevParams, type: "filter", marginLeft: "0" }));
         handleWindow({ ...contentSize, height: "176vh", flexDirection: "column", justifyContent: "none", alignItems: "center" }, { ...contentSize, height: "88vh", flexDirection: "none", justifyContent: "center", alignItems: "none" }, "filter")
 
     }
-    return <Link to="./filter"><button className="btn" onClick={() => handleClick()}><FontAwesomeIcon icon={faSliders} className="mg-r-5" /> Filters</button></Link>
+    return <Link to="./filter"><button className={"btn" + " " + themeColors.colorSecondary} onClick={() => handleClick()}><FontAwesomeIcon icon={faSliders} className="mg-r-5" /> Filters</button></Link>
 }
 
 export { FilterButton, TopRightButton }
