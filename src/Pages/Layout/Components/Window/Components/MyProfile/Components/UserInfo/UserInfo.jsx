@@ -12,23 +12,31 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const UserInfo = () => {
-
+const UserInfo = ({ profile, modifyProfile }) => {
 
 
     const [isDisabled, setIsDisabled] = useState(true);
     const [OTWBtnClass, setOTWBtnClass] = useState("");
     const inputName = useRef(null);
-    const [userInfo, setUserInfo] = useState({ section: "userInfo", name: "Name", field: "Position", location: "Location", image: "", otw: false })
+    const [userInfo, setUserInfo] = useState({ section: "userinfo", content: { name: "Name", position: "Position", location: "Location", profile_pic: "", otw: false } })
     const [hasEdited, setHasEdited] = useState(false);
 
     useEffect(() => {
-        if (!userInfo.otw) {
+        if (!userInfo.content.otw) {
             setOTWBtnClass("btn btn-var");
         } else {
             setOTWBtnClass("btn");
         }
-    }, [userInfo.otw])
+    }, [userInfo.content.otw])
+
+    useEffect(() => {
+        setUserInfo({ ...userInfo, content: { ...userInfo.content, name: profile.userinfo.name, position: profile.userinfo.position, location: profile.userinfo.location, profile_pic: profile.userinfo.profile_pic, otw: profile.userinfo.otw } })
+    }, [profile])
+
+    useEffect(() => {
+        console.log(userInfo)
+    }, [userInfo])
+
 
 
     const editMode = () => {
@@ -37,6 +45,7 @@ const UserInfo = () => {
             setHasEdited(true)
         } else {
             setIsDisabled(!isDisabled);
+            modifyProfile(userInfo)
             setHasEdited(false)
         }
     }
@@ -46,6 +55,8 @@ const UserInfo = () => {
         // current property is refered to input element
         inputName.current.focus();
     }, [isDisabled])
+
+
 
     const handleClick = () => {
         if (isDisabled) {
@@ -62,13 +73,13 @@ const UserInfo = () => {
 
     }
     const updateValue = (e) => {
-        setUserInfo({ ...userInfo, [e.target.name]: e.target.value })
+        setUserInfo({ ...userInfo, content: { ...userInfo.content, [e.target.name]: e.target.value } })
     }
 
 
     return <Section cname={`user-info ${!isDisabled && "edit-input"}`}>
         <div className="user-info-left">
-            <div className="user-info-pic" style={{ backgroundImage: `url(${userInfo.image})` }}>
+            <div className="user-info-pic" style={{ backgroundImage: `url(${userInfo.content.profile_pic})` }}>
                 {!isDisabled && <UploadButton setInfo={setUserInfo} who='userInfo' />}
             </div>
         </div>
@@ -77,9 +88,9 @@ const UserInfo = () => {
                 <div className="user-info-right-top-left">
                 </div>
                 <div className="user-info-right-top-middle">
-                    <input type="text" ref={inputName} className='name' name='name' disabled={isDisabled} value={userInfo.name} onChange={(e) => { updateValue(e) }} />
-                    <input type="text" className='field' name='field' disabled={isDisabled} value={userInfo.field} onChange={(e) => { updateValue(e) }} />
-                    <input type="text" className='location' name='location' disabled={isDisabled} value={userInfo.location} onChange={(e) => { updateValue(e) }} />
+                    <input type="text" ref={inputName} className='name' name='name' disabled={isDisabled} value={userInfo.content.name} onChange={(e) => { updateValue(e) }} />
+                    <input type="text" className='field' name='position' disabled={isDisabled} value={userInfo.content.position} onChange={(e) => { updateValue(e) }} />
+                    <input type="text" className='location' name='location' disabled={isDisabled} value={userInfo.content.location} onChange={(e) => { updateValue(e) }} />
                 </div>
                 <div className="user-info-right-top-right">
                     <Toggle width={"40"} height={"24"} sliderWidth={"16"} sliderHeight={"16"} translate={"16"} backgroundColorChecked={"#3c8891"} onChange={() => editMode()} />

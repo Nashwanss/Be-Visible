@@ -35,7 +35,7 @@ const UploadButton = ({ setInfo, who, index }) => {
                     return
                 }
                 if (who === 'userInfo') {
-                    setInfo(prevInfo => ({ ...prevInfo, image: url }))
+                    setInfo(prevInfo => ({ ...prevInfo, content: {...prevInfo.content, profile_pic: url} }))
                 }
                 if (who === 'experience') {
                     setInfo(prevInfo => (prevInfo.map((info, i) => {
