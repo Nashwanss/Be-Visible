@@ -1,14 +1,22 @@
+
 import { useContext, useEffect, useState } from "react";
 
 import { UserSession } from "../../App";
 
 import axios from "axios";
 
+// import { ThemeContext, themes } from "./ThemeContext";
+
 import logo from "../../Assets/LM-Logo.png";
 import background from "../../Assets/background.jpeg";
+// import Johnson from "../../Assets/Johnson7 team.jpg";
+import { HiMoon } from "react-icons/hi";
+import { HiSun } from "react-icons/hi";
 import "./Login.css";
+import { useState } from "react";
 
 const LogIn = () => {
+
 
   const userDataContext = useContext(UserSession);
 
@@ -52,13 +60,25 @@ const LogIn = () => {
 
   }
 
+  const [theme, setTheme] = useState("light");
+
+  const changeThemeHandler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
   return (
     <>
       <div
         className="container"
-        style={{ backgroundImage: `url(${background})` }} >
+        style={{ backgroundImage: `url(${background})` }}
+      >
         <div className="login-container">
-          <button className='toggle'>Dark</button>
+          <button className="toggle" onClick={changeThemeHandler}>
+            {theme === "light" ? (
+              <HiSun size={40} color="#fdd40a" />
+            ) : (
+              <HiMoon size={30} color="darkslateblue" />
+            )}
+          </button>
           <div className="form-container">
             <img src={logo} alt="logo" className="login-logo" />
             <div className="form-title">Sign in</div>
@@ -80,9 +100,7 @@ const LogIn = () => {
                 onChange={handleInputChange}
               />
               <button className="form__button form__button--primary">
-                <span>
-                  Sign In
-                </span>
+                <span>Sign In</span>
               </button>
             </form>
             <div className="form-bottom">

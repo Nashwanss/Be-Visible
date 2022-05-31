@@ -1,3 +1,4 @@
+
 import { createContext, useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router";
 import { BrowserRouter } from 'react-router-dom';
@@ -12,10 +13,24 @@ import CoachManager from "./Pages/Layout/Components/Window/Components/CoachManag
 import Login from "./Pages/LogIn/LogIn";
 import Register from "./Pages/Register/Register";
 
+
 export const UserSession = createContext();
 
 
+// const lightTheme = {
+//   background: "#f5f5f5",
+//   text: "red",
+// };
+// const darkTheme = {
+//   background: "gray",
+//   text: "white",
+// };
 
+
+// const themes = {
+//   light: lightTheme,
+//   dark: darkTheme,
+// };
 
 const App = () => {
 
@@ -68,6 +83,5 @@ const App = () => {
 
 
 
+
 export default App;
-
-

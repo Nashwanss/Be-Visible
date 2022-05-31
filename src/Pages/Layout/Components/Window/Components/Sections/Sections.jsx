@@ -52,7 +52,7 @@ const ProfDisclosure = (props) => {
 
 const FilterDisclosure = (props) => {
     return <SectionTwo cname={"disclosure " + props.cname}>
-        <Disclosure>
+        <Disclosure defaultOpen={true}>
             {({ open }) => (  
                 <>  <div className="label">
                     <Disclosure.Button className={"button-disclosure"}>
