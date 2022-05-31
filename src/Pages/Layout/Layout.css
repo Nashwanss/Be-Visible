@@ -27,6 +27,24 @@
   transform: translate(0, 5px);
 }
 
+.logo-layout {
+  width: 60%;
+}
+
+.logout-btn {
+  background-color: transparent;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.buttons-con {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .profile-button {
   height: 50px;
   width: 50px;
@@ -100,13 +118,6 @@ footer {
   position: absolute;
   z-index: 1000;
   transition: opacity 0.25s linear;
-}
-
-.logout-btn {
-  background-color: transparent;
-  border: none;
-  font-size: 0.8em;
-  cursor: pointer;
 }
 
 /* dark-light classes */
