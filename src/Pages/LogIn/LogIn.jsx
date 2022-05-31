@@ -27,6 +27,7 @@ const LogIn = () => {
               <HiMoon size={30} color="darkslateblue" />
             )}
           </button>
+          {console.log(theme)}
           <div className="form-container">
             <img src={logo} alt="logo" className="login-logo" />
             <div className="form-title">Sign in</div>
