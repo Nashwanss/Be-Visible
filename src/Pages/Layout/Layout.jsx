@@ -4,7 +4,12 @@ import { useEffect, useState, createContext } from "react";
 // CSS & Assets
 import "./Layout.css";
 import Logo from "../../Assets/LM-Logo.png";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
 import cssClasses from "./cssClasses.json";
+
 
 // Components
 import Window from "./Components/Window/Window";
@@ -96,6 +101,7 @@ const Layout = ({ iAm }) => {
   };
 
   return (
+
     <ThemeContext.Provider value={{ themeColors }}>
       <div className="layout">
         <header>
