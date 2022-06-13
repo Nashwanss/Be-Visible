@@ -4,16 +4,15 @@ BeVisible is part of the BeApps tool set for coaches and learners to use in BeCo
 
 ## In this App
 
-The learners will be able to create a professional profiles showcasing their strength,
+The learners are able to create a professional profiles showcasing their strength,
 resume and availability to work or go through an internship.
-Coaches will be able to grant certifications on certain skills
-The app will be comprised of three parts.
+Coaches are able to grant certifications on certain skills.
+The app is comprised of three parts.
 
-- One for he coaches, where they will be able to grant learners some form of certifications.
-- One for the learners where hey will be able to update their infos and add their latest
-  works.
-  -One for Companies and recruiters where they will be able to check out learners profiles
-  The app will then create groups based on learners preferences
+- One for the coaches
+- One for the learners
+- One for Companies and recruiters to check out learners profiles
+
 
 ## Preview 
 ![BeVisible](./BeVisible.gif?raw=true "BeVisible")
