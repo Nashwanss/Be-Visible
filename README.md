@@ -11,7 +11,7 @@ The app is comprised of three parts.
 
 - One for the coaches
 - One for the learners
-- One for Companies and recruiters to check out learners profiles
+- One for companies and recruiters to check out learners profiles
 
 
 ## Preview 
