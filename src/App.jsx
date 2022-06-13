@@ -1,10 +1,6 @@
-
-
 import { createContext, useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router";
-import { BrowserRouter } from 'react-router-dom';
-
-
+import { BrowserRouter } from "react-router-dom";
 
 import "./App.css";
 import Layout from "./Pages/Layout/Layout";
@@ -14,68 +10,98 @@ import CoachManager from "./Pages/Layout/Components/Window/Components/CoachManag
 import Login from "./Pages/LogIn/LogIn";
 import Register from "./Pages/Register/Register";
 
-
 export const UserSession = createContext();
 
-
-
 const App = () => {
-
-
-  const [userData, setUserData] = useState({ id: "", username: "", email: "", role: "", token: "", isLoggedIn: false });
+  const [userData, setUserData] = useState({
+    id: "",
+    username: "",
+    email: "",
+    role: "learner",
+    token: "",
+    isLoggedIn: true,
+  });
 
   useEffect(() => {
     console.log(userData);
-  },[userData]);
-
+  }, [userData]);
 
   const getJWTfromLocalStorage = async () => {
     try {
-      let data = JSON.parse(localStorage.getItem("token")) // get token from local storage
+      let data = JSON.parse(localStorage.getItem("token")); // get token from local storage
       if (data) {
-        setUserData({ isLoggedIn: true, id: data.id, username: data.username, email: data.email, role: data.role, token: data.token })
+        setUserData({
+          isLoggedIn: true,
+          id: data.id,
+          username: data.username,
+          email: data.email,
+          role: data.role,
+          token: data.token,
+        });
       }
+    } catch (err) {
+      console.log(err);
     }
-    catch (err) {
-      console.log(err)
-    }
-  }
+  };
 
   useEffect(() => {
-    getJWTfromLocalStorage()
-  }, [])
+    getJWTfromLocalStorage();
+  }, []);
   useEffect(() => {
     console.log(userData);
   }, [userData]);
 
   let userDataContext = { userData: userData, setUserData: setUserData };
   return (
-
-    <UserSession.Provider value={userDataContext} >
+    <UserSession.Provider value={userDataContext}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" index element={userData.isLoggedIn ? <Navigate replace to="/dashboard" /> : <Navigate replace to="/login" />} />
-          <Route path="login" element={userData.isLoggedIn ? <Navigate replace to="/dashboard" /> : <Login />} />
+          <Route
+            path="/"
+            index
+            element={
+              userData.isLoggedIn ? (
+                <Navigate replace to="/dashboard" />
+              ) : (
+                <Navigate replace to="/login" />
+              )
+            }
+          />
+          <Route
+            path="login"
+            element={
+              userData.isLoggedIn ? (
+                <Navigate replace to="/dashboard" />
+              ) : (
+                <Login />
+              )
+            }
+          />
           <Route path="register" element={<Register />} />
-          <Route path="dashboard" element={!userData.isLoggedIn ? <Navigate replace to="/login" /> : <Layout iAm={userData.role} />} >
+          <Route
+            path="dashboard"
+            element={
+              !userData.isLoggedIn ? (
+                <Navigate replace to="/login" />
+              ) : (
+                <Layout iAm={userData.role} />
+              )
+            }
+          >
             <Route path="filter" element={<Filter />} />
             <Route path="myprofile" element={<MyProfile />} />
             <Route path="coachmanager" element={<CoachManager />} />
           </Route>
-
         </Routes>
       </BrowserRouter>
     </UserSession.Provider>
   );
-}
+};
 
-{/* <Route index element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Navigate replace to="/login" />} />
+{
+  /* <Route index element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Navigate replace to="/login" />} />
 <Route path="login" element={isLoggedIn ? <Navigate replace to="/dashboard" /> : <Layout whatIs={"login"} />} />
-<Route path="dashboard" element={!isLoggedIn ? <Navigate replace to="/login" /> : <Layout whatIs={"dashboard"} />} > */}
-
-
-
-
-
+<Route path="dashboard" element={!isLoggedIn ? <Navigate replace to="/login" /> : <Layout whatIs={"dashboard"} />} > */
+}
 
 export default App;

@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.55e65e50.css",
+    "main.js": "/static/js/main.f43cd9cc.js",
+    "static/media/background.jpeg": "/static/media/background.b336634d64cf6ee2ae5d.jpeg",
+    "static/media/DM-Logo.png": "/static/media/DM-Logo.cb863d7b5b2dfe1ddfb5.png",
+    "static/media/LM-Logo.png": "/static/media/LM-Logo.6d1660455f24d11b0d40.png",
+    "static/media/html5.svg": "/static/media/html5.6a541f7e5dc71464ba8974f5de75a37c.svg",
+    "static/media/loading.svg": "/static/media/loading.714121ac1a584dff6ec9160add5e4bb4.svg",
+    "index.html": "/index.html",
+    "main.55e65e50.css.map": "/static/css/main.55e65e50.css.map",
+    "main.f43cd9cc.js.map": "/static/js/main.f43cd9cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55e65e50.css",
+    "static/js/main.f43cd9cc.js"
+  ]
+}
