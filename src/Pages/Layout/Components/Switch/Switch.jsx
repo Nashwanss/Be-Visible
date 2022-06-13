@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../Layout";
 
-import { HiSun } from "react-icons/hi";
-import { HiMoon } from "react-icons/hi";
+// import { HiSun } from "react-icons/hi";
+// import { HiMoon } from "react-icons/hi";
 
 import './Switch.css';
 
@@ -13,13 +13,13 @@ const Switch = ({ switchMode, themeMode }) => {
         switchMode();
     }}
     >
-    {console.log(themeMode)}
+  
 
-    {themeMode === true ? (
+    {/* {themeMode === true ? (
         <HiSun size={50} color="#8276cb" />
     ) : (
         <HiMoon size={40} color="darkslateblue" />
-    )}
+    )} */}
     </div>
 );
 };

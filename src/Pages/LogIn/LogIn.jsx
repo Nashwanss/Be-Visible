@@ -10,8 +10,8 @@ import axios from "axios";
 import logo from "../../Assets/LM-Logo.png";
 import background from "../../Assets/background.jpeg";
 // import Johnson from "../../Assets/Johnson7 team.jpg";
-import { HiMoon } from "react-icons/hi";
-import { HiSun } from "react-icons/hi";
+// import { HiMoon } from "react-icons/hi";
+// import { HiSun } from "react-icons/hi";
 import "./Login.css";
 
 const LogIn = () => {
@@ -72,13 +72,13 @@ const LogIn = () => {
       >
         <div className="login-container">
           <button className="toggle" onClick={changeThemeHandler}>
-            {theme === "light" ? (
+            {/* {theme === "light" ? (
               <HiSun size={40} color="#8276cb" />
             ) : (
               <HiMoon size={30} color="darkslateblue" />
-            )}
+            )} */}
           </button>
-          {console.log(theme)}
+         
           <div className="form-container">
             <img src={logo} alt="logo" className="login-logo" />
             <div className="form-title">Sign in</div>

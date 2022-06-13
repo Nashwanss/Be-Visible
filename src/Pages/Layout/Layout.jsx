@@ -30,14 +30,13 @@ const Layout = ({ iAm }) => {
   const dark = cssClasses.dark;
 
   const [themeMode, setThemeMode] = useState(true);
-  const [themeColors, setThemeColors] = useState({ ...dark });
+  const [themeColors, setThemeColors] = useState({ ...light});
 
   const switchMode = () => {
     setThemeMode(!themeMode);
     const darkOrlight = themeMode ? light : dark;
     setThemeColors({ ...darkOrlight });
-    // console.log(themeMode);
-    // console.log(darkOrlight);
+   
   };
 
   const [WindowDisplayed, setWindowDisplayed] = useState(false);
@@ -122,7 +121,7 @@ const Layout = ({ iAm }) => {
             <div className="inner-con">
               <div className="logo-layout">
               <a href="/" className="logo-con">
-              {themeMode === false ? (<img src={LM_Logo} alt="LM Logo" />) : (<img src={DM_Logo} alt="DM Logo" />)}
+               {themeMode === false ? (<img src={LM_Logo} alt="LM Logo" />) : (<img src={LM_Logo} alt="LM Logo" />)} 
               </a>
               </div>
               <div className="buttons-con">
