@@ -15,4 +15,5 @@ The app will be comprised of three parts.
   -One for Companies and recruiters where they will be able to check out learners profiles
   The app will then create groups based on learners preferences
 
-
+## Preview 
+![BeVisible](./BeVisible.gif?raw=true "BeVisible")
