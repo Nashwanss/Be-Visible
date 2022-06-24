@@ -16,3 +16,4 @@ The app is comprised of three parts.
 
 ## Preview 
 
+![BeVisible](./BeVisible.gif?raw=true "BeVisible")
