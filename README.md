@@ -16,4 +16,5 @@ The app will be comprised of three parts.
   The app will then create groups based on learners preferences
 
 ## Preview 
+
 ![BeVisible](./BeVisible.mov?raw=true "BeVisible")
